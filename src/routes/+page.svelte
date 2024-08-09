@@ -60,7 +60,7 @@ let projects = [
                 <i class={`${skill.icon} fa-2xl`}></i>
                 <h2 class="text-2xl font-black text-blue-100 mt-4">{skill.name}</h2>
                 <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
-                    <div class="bg-yellow-900 h-4 rounded-full" style="width: {skill.level};"></div>
+                    <div class="bg-blue-900 h-4 rounded-full" style="width: {skill.level};"></div>
                 </div>
             </div>
         {/each}
