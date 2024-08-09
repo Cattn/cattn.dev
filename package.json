@@ -11,6 +11,10 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},
+	"engines": {
+    "node": ">=21.6.2",
+    "npm": ">=9.6.7"
+  	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-cloudflare": "^4.7.0",
