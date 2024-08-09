@@ -41,7 +41,7 @@ let projects = [
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-2">
             {#each projects as project}
-                <div class="border px-4 py-2 rounded-md shadow-md">
+                <div class="border px-4 py-2 rounded-md shadow-md flex flex-col items-center justify-center hover:border-blue-500 h-full text-center">
                     <Button variant="link" href="{project.link}" class="text-blue-500 hover:underline text-xl font-bold p-0 m-0">{project.title}</Button>
                     <p>{project.description}</p>
                 </div>
