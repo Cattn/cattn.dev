@@ -30,7 +30,7 @@ let projects = [
     <img src="/images/cat.jpg" alt="cat" class="w-48 h-48 rounded-md" />
     <div class="flex-grow lg:w-1/3">
         <h1 class="text-xl font-bold mt-4 lg:mt-0 lg:ml-4 w-full overflow">
-            Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games!
+            Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built FBT/Slime Trackers.
         </h1>
     </div>
     <div class="flex flex-col lg:ml-4 mt-4 lg:mt-0 w-full lg:w-3/6">

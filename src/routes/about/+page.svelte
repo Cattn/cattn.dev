@@ -7,7 +7,8 @@
         { icon: 'fa-brands fa-steam', name: 'Steam', link: 'https://steamcommunity.com/id/cattn/' },
         { icon: 'fa-brands fa-spotify', name: 'Spotify', link: 'https://open.spotify.com/user/1q9jqzkqmtqitlg498o29ui6d?si=709c6bbb565c4ff8' },
         { icon: 'fa-regular fa-keyboard', name: 'Monkeytype', link: 'https://monkeytype.com/profile/Cattn' },
-        { icon: 'fa-solid fa-globe', name: 'mathstudy.dev', link: 'https://mathstudy.dev/' }
+        { icon: 'fa-solid fa-globe', name: 'mathstudy.dev', link: 'https://mathstudy.dev/' },
+        { icon: 'fa-solid fa-music', name: 'Stats.fm', link: 'https://stats.fm/catt' },
     ];
 </script>
 
