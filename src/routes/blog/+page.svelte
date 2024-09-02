@@ -1,18 +1,5 @@
 <script lang="ts">
-    let articles = [
-        {
-            title: 'Creating this site',
-            description: 'The process of creating this site',
-            link: '/blog/article/site-creation',
-            date: '08/10/2024'
-        },
-        {
-            title: 'Creating UMLA',
-            description: 'The inspiration and process behind my development of UMLA.',
-            link: '/blog/article/umla-creation',
-            date: '08/10/2024'
-        }
-    ]
+    import articles from './articles.json';
 
     import {Button} from "$lib/components/ui/button/index.js";
 </script>
