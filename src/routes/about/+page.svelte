@@ -4,6 +4,8 @@
     let socials = [
         { icon: 'fa-brands fa-github', name: 'GitHub', link: 'https://github.com/Cattn' },
         { icon: 'fa-brands fa-discord', name: 'Discord', link: 'https://discord.com/users/523927057722376204' },
+        { icon: 'fa-brands fa-twitch', name: 'Twitch', link: 'https://www.twitch.tv/cattn_' },
+        { icon: 'fa-brands fa-youtube', name: 'Youtube', link: 'https://www.youtube.com/@cattn' },
         { icon: 'fa-brands fa-steam', name: 'Steam', link: 'https://steamcommunity.com/id/cattn/' },
         { icon: 'fa-brands fa-spotify', name: 'Spotify', link: 'https://open.spotify.com/user/1q9jqzkqmtqitlg498o29ui6d?si=709c6bbb565c4ff8' },
         { icon: 'fa-regular fa-keyboard', name: 'Monkeytype', link: 'https://monkeytype.com/profile/Cattn' },
