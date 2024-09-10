@@ -33,7 +33,7 @@
         {#each socials as social}
         <div class="border px-4 py-2 rounded-md shadow-md flex items-center justify-center hover:border-blue-500 h-full text-center p-5">
             <i class={`${social.icon} fa-2xl p-2`}></i>
-            <Button variant="link" href="{social.link}" class="p-2 text-blue-500 hover:underline text-xl font-bold p-0 m-0">{social.name}</Button>
+            <Button variant="link" href="{social.link}" class="text-blue-500 hover:underline text-xl font-bold p-0 m-0">{social.name}</Button>
         </div>
         {/each}
     </div>

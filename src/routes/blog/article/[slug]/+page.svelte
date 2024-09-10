@@ -1,5 +1,6 @@
 <script>
 // @ts-nocheck
+    import umla_creation from '../content/umla-creation.svelte';
 
     import { page } from '$app/stores';  
     let path = $page.url.pathname  
@@ -31,3 +32,8 @@
         <p class="text-sm text-blue-800">{article.date}</p>
     </div>
 
+    <div class="flex justify-center ml-6">
+        <p class="text-sm text-blue-800">Tags: {tags}</p>
+    </div>
+
+    <svelte:component this={umla_creation} />
