@@ -5,14 +5,14 @@
     let featuredProjects = [
         { title: 'GBA', description: 'The best way to play your Retro Library on the go.', link: 'https://github.com/Cattn/gba' },
         { title: 'Kolf', description: 'A mod for kolf that allows for advanced stat tracking, better multiplayer, and more.', link: 'https://github.com/Cattn/kolf' },
-        { title: 'Cattn.dev', description: 'This website!', link: 'https://github.com/Cattn/cattn.dev' }
+        { title: 'Cattn.dev', description: 'This website!', link: 'https://github.com/Cattn/cattn.dev' },
+        { title: 'Bunker', description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker' }
     ]
 
     let otherProjects = [
         { title: 'UMLA', description: 'A local-library first music platform. A new way to organize and enjoy your music.', link: 'https://github.com/Maple-Development/UMLA/tree/2.0' },
         { title: 'Wii-GBA', description: 'A mostly faithful recreation of the Wii UI as an emulator site.', link: 'https://github.com/Math-Study/wii-gba' },
         { title: 'mathstudy.dev', description: 'The portfolio site for Math-Study, hosted on mathstudy.dev', link: 'https://github.com/Math-Study-Dev/math-study-dev.github.io/tree/svelte' },
-        { title: 'Bunker', description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker' },
         { title: 'lab-to-intravet', description: 'An app made in python to convert your lab results to a usable text format in the Vetinary software "Intravet". Available on request.', link: '#' },
     ]
 
