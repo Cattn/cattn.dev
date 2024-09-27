@@ -2,15 +2,10 @@
     import {Button} from "$lib/components/ui/button/index.js";
     import '@fortawesome/fontawesome-free/css/all.min.css'
     let socials = [
-        { icon: 'fa-brands fa-github', name: 'GitHub', link: 'https://github.com/Cattn' },
-        { icon: 'fa-brands fa-discord', name: 'Discord', link: 'https://discord.com/users/523927057722376204' },
-        { icon: 'fa-brands fa-twitch', name: 'Twitch', link: 'https://www.twitch.tv/cattn_' },
-        { icon: 'fa-brands fa-youtube', name: 'Youtube', link: 'https://www.youtube.com/@cattn' },
-        { icon: 'fa-brands fa-steam', name: 'Steam', link: 'https://steamcommunity.com/id/cattn/' },
-        { icon: 'fa-brands fa-spotify', name: 'Spotify', link: 'https://open.spotify.com/user/1q9jqzkqmtqitlg498o29ui6d?si=709c6bbb565c4ff8' },
-        { icon: 'fa-regular fa-keyboard', name: 'Monkeytype', link: 'https://monkeytype.com/profile/Cattn' },
-        { icon: 'fa-solid fa-globe', name: 'mathstudy.dev', link: 'https://mathstudy.dev/' },
-        { icon: 'fa-solid fa-music', name: 'Stats.fm', link: 'https://stats.fm/catt' },
+        { icon: 'fa-brands fa-github', name: 'GitHub', link: 'https://github.com/wicked1234567' },
+        { icon: 'fa-brands fa-discord', name: 'Discord', link: 'https://discord.gg/jwYYtxRDZE' },
+        { icon: 'fa-brands fa-youtube', name: 'Youtube', link: 'https://www.youtube.com/channel/UCpEYx3qAZQ0OLs-7o3ke-EQ' },
+      
     ];
 </script>
 
