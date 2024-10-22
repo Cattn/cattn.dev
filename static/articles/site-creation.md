@@ -10,6 +10,4 @@ I created this site as a home to all of my project, as well as to host informati
 - Markdown
 
 ## Challenges I faced throughout the project
-- One major challenge I had with this project, is I'm pretty bad at styling components, and actually piecing things together with CSS.  This project was an excuse for me to get very familiar with everything possible with tailwind, and get my information down.
-
-- Another major challenge I had was coming up with a blog system. I went for a markdown approach where the articles are imported as markdown, then loaded as html.
+- A major challenge I have faced through the creation of this project was the blog system. I wanted to design my own system for loading blogs written in markdown as html components in svelte. This is so I could easily translate my Obsidian notes and other markdown features to html.

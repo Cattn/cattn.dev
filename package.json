@@ -43,6 +43,7 @@
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
 		"markdown-it": "^14.1.0",
+		"svelte-inview": "^4.0.4",
 		"tailwind-merge": "^2.4.0",
 		"tailwind-variants": "^0.2.1"
 	}

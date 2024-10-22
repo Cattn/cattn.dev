@@ -1,5 +1,10 @@
 <script lang="ts">
     import articles from './articles.json';
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        document.title = "Blog - Cattn.dev";
+    })
 
     import {Button} from "$lib/components/ui/button/index.js";
 </script>
