@@ -3,7 +3,7 @@
 
 </script>
 
-<div class="sticky top-0 border-b border-border flex justify-center bg-background">
+<div class="sticky top-0 border-b not-supersm:flex flex justify-center bg-background supersm:hidden">
     <div>
     <Button href="/" variant="link" class="hover:text-blue-300">Home</Button>
     <Button href="/projects" variant="link" class="hover:text-blue-300">Projects</Button>

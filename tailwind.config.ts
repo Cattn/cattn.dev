@@ -56,8 +56,12 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans]
+			},
+			screens: {
+				'supersm': '60px',
+				'not-supersm': '240px'
 			}
-		}
+		},
 	},
 };
 
