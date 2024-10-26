@@ -14,7 +14,7 @@
     { icon: 'fa-solid fa-code', name: 'C++', level: '35%' },
 ];
 
-    let webskills = [
+let webskills = [
     { name: 'Tailwind', level: '95%' },
     { name: 'SvelteKit', level: '90%' },
     { name: 'Svelte', level: '87%' },
@@ -94,7 +94,7 @@ let artists = [
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-2">
             {#each projects as project}
-                <div class="border px-4 py-2 rounded-md shadow-md flex flex-col items-center justify-center hover:border-blue-500 h-full text-center">
+                <div class="border px-4 py-2 rounded-md shadow-md flex flex-col items-center justify-center hover:border-blue-500 text-center">
                     <Button variant="link" href="{project.link}" class="text-blue-500 hover:underline text-xl font-bold p-0 m-0">{project.title}</Button>
                     <p>{project.description}</p>
                 </div>
@@ -157,7 +157,7 @@ let artists = [
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-5">
         {#each artists as artist}
             <div class="flex flex-col items-center mt-2">
-                <img src="/images/artists/{artist.image}" alt="{artist.title}" class="w-fit h-48 object-center rounded-[100%] p-1" />
+                <img src="/images/artists/{artist.image}" alt="{artist.title}" class="w-fit h-48 object-fill rounded-[100%] p-1" />
                 <h2 class="text-2xl font-bold text-green-300 text-center">{artist.title}</h2>
             </div>
         {/each}
