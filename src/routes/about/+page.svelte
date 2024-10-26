@@ -34,7 +34,7 @@
     </div>
 
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2 ml-5 mr-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2 ml-5 mr-5 mb-5">
         {#each socials as social}
         <div class="border px-4 py-2 rounded-md shadow-md flex items-center justify-center hover:border-blue-500 h-full text-center p-5">
             <i class={`${social.icon} fa-2xl p-2`}></i>
