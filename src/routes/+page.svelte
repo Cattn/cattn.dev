@@ -34,6 +34,40 @@ let projects = [
     { title: 'Bunker' , description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker' }
   ];
 
+let albums = [
+    { title: 'To Pimp A Butterfly', image: 'tpab.webp'},
+    { title: 'Atavista', image: 'atavista.webp'},
+    { title: 'brat', image: 'brat.webp'},
+    { title: 'Californication', image: 'cali.webp'},
+    { title: 'Cyberpunk 2077: Radio, Vol. 2', image: 'cp277.webp'},
+    { title: 'Damn.', image: 'damn.webp'},
+    { title: "By the Way", image: 'dontstop.webp'},
+    { title: 'Evil Empire', image: 'evilem.webp'},
+    { title: 'good kid, m.A.A.d city', image: 'gkmc.webp'},
+    { title: 'Guts', image: 'guts.webp'},
+    { title: 'Mr. Morale & The Big Steppers', image: 'mmatbs.webp'},
+    { title: 'Rage Against The Machine', image: 'ratm.webp'},
+    { title: 'The Slow Rush', image: 'tsr.webp'},
+    { title: 'untitled unmastered.', image: 'unti.webp'},
+
+]
+
+let artists = [
+    { title: 'Rage Against The Machine', image: 'ratmartist.webp'},
+    { title: 'Kendrick Lamar', image: 'kendrick.webp'},
+    { title: 'Childish Gambino', image: 'gambino.webp'},
+    { title: 'George Clinton', image: 'clinton.webp'},
+    { title: 'Metro Boomin', image: 'metro.webp'},
+    { title: 'Tyler, the Creator', image: 'tyler.webp'},
+    { title: 'Nine Inch Nails', image: 'nin.webp'},
+    { title: 'Slipknot', image: 'slipknot.webp'},
+    { title: 'Thundercat', image: 'thundercat.webp'},
+    { title: 'Olivida Rodrigo', image: 'livia.webp'},
+    { title: 'Limp Bizkit', image: 'limpbizkit.webp'},
+    { title: 'Korn', image: 'korn.webp'},
+    { title: 'Red Hot Chili Peppers', image: 'rhcp.webp'},
+]
+
   onMount(() => {
     document.title = "Home - Cattn.dev";
   });
@@ -97,6 +131,34 @@ let projects = [
                 <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
                     <div class="bg-blue-900 h-4 rounded-full" style="width: {skill.level};"></div>
                 </div>
+            </div>
+        {/each}
+    </div>
+</div>
+
+<div class="mt-10 mx-4 lg:mx-40">
+    <h1 class="text-3xl font-black text-green-500 text-left">Favorite Albums</h1>
+</div>
+<div class="mt-4 border border-border mx-4 lg:mx-32 mb-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-5">
+        {#each albums as album}
+            <div class="flex flex-col items-center mt-2">
+                <img src="/images/albums/{album.image}" alt="{album.title}" class="w-fit h-48 object-contain rounded-[10%]  p-1" />
+                <h2 class="text-2xl font-bold text-green-300 text-center">{album.title}</h2>
+            </div>
+        {/each}
+    </div>
+</div>
+
+<div class="mt-10 mx-4 lg:mx-40">
+    <h1 class="text-3xl font-black text-green-500 text-left">Favorite Artists</h1>
+</div>
+<div class="mt-4 border border-border mx-4 lg:mx-32 mb-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-5">
+        {#each artists as artist}
+            <div class="flex flex-col items-center mt-2">
+                <img src="/images/artists/{artist.image}" alt="{artist.title}" class="w-fit h-48 object-center rounded-t-[50%] rounded-b-[50%] rounded-l-[90%] rounded-r-[90%] p-1" />
+                <h2 class="text-2xl font-bold text-green-300 text-center">{artist.title}</h2>
             </div>
         {/each}
     </div>
