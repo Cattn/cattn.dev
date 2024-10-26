@@ -157,7 +157,7 @@ let artists = [
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-5">
         {#each artists as artist}
             <div class="flex flex-col items-center mt-2">
-                <img src="/images/artists/{artist.image}" alt="{artist.title}" class="w-fit h-48 object-center rounded-t-[50%] rounded-b-[50%] rounded-l-[90%] rounded-r-[90%] p-1" />
+                <img src="/images/artists/{artist.image}" alt="{artist.title}" class="w-fit h-48 object-center rounded-[100%] p-1" />
                 <h2 class="text-2xl font-bold text-green-300 text-center">{artist.title}</h2>
             </div>
         {/each}
