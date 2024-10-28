@@ -28,7 +28,7 @@
 </div>
 
 
-    <div class="flex justify-start mt-10 flex-col items-start ml-20">
+    <div class="flex justify-start mt-10 flex-col items-start ml-5">
         <h1 class="text-3xl font-black text-blue-300">Socials</h1>
         <p class="text-lg font-black text-blue-100">Where to find me</p>
     </div>

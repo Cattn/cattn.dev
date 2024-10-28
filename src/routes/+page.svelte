@@ -87,9 +87,8 @@ let artists = [
         </h1>
     </div>
     <div class="flex flex-col lg:ml-4 mt-4 lg:mt-0 w-full lg:w-3/6">
-        <div class="flex justify-between">
+        <div class="flex lg:justify-end md:justify-start">
             <h2 class="text-2xl font-black text-blue-300">Featured Projects</h2>
-            <Button href="/projects" variant="link" class="text-2xl ml-2 p-0 pb-1 font-black text-blue-800">More Projects!</Button>
         </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-2">
