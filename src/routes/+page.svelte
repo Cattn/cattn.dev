@@ -79,14 +79,14 @@ let artists = [
 <div class="flex justify-center ml-6">
     <h2 class="text-xl font-black text-blue-100">aka Logan</h2>
 </div>
-<div class="flex flex-col lg:flex-row justify-start items-center lg:items-start mt-10 mx-4 lg:mx-32">
-    <img src="/images/cat.jpg" alt="cat" class="w-48 h-48 rounded-md" />
-    <div class="flex-grow lg:w-1/3">
+<div class="flex flex-col lg:flex-row items-center justify-center lg:justify-start mt-3 mx-4 lg:mx-32">
+    <img src="/images/cat.jpg" alt="cat" class="w-48 h-48 rounded-md self-center" />
+    <div class="flex-grow lg:w-1/3 self-center mr-4">
         <h1 class="text-xl font-bold mt-4 lg:mt-0 lg:ml-4 w-full overflow">
             Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers. I'm also in <Button variant="link" class="text-lg p-0 pb-1 font-black text-blue-300" href="https://mercurywork.shop/">Mercury Workshop.</Button>
         </h1>
     </div>
-    <div class="flex flex-col lg:ml-4 mt-4 lg:mt-0 w-full lg:w-3/6">
+    <div class="flex flex-col lg:ml-4 mt-4 lg:mt-0 w-full lg:w-3/6 self-center">
         <div class="flex lg:justify-end md:justify-start">
             <h2 class="text-2xl font-black text-blue-300">Featured Projects</h2>
         </div>
