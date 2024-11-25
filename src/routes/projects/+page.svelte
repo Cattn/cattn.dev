@@ -11,7 +11,7 @@
     ]
 
     let otherProjects = [
-        { title: 'UMLA', description: 'A local-library first music platform. A new way to organize and enjoy your music.', link: 'https://github.com/Maple-Development/UMLA/tree/2.0', badges: ['Inactive', 'In Progress'] },
+        { title: 'UMLA', description: 'A local-library first music platform. A new way to organize and enjoy your music.', link: 'https://github.com/Maple-Development/UMLA/tree/2.0', badges: ['Active', 'In Progress'] },
         { title: 'Wii-GBA', description: 'A mostly faithful recreation of the Wii UI as an emulator site.', link: 'https://github.com/Math-Study/wii-gba', badges: ['Completed'] },
         { title: 'mathstudy.dev', description: 'The portfolio site for Math-Study, hosted on mathstudy.dev', link: 'https://github.com/Math-Study-Dev/math-study-dev.github.io/tree/svelte', badges: ['Completed'] },
         { title: 'lab-to-intravet', description: 'An app made in python to convert your lab results to a usable text format in the Vetinary software "Intravet". Available on request.', link: '#', badges: ['Completed'] },
