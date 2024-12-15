@@ -11,7 +11,7 @@
     { icon: 'fa-brands fa-unity', name: 'Unity', level: '65%' },
     { icon: 'fa-brands fa-python', name: 'Python', level: '65%' },
     { icon: 'fa-solid fa-code', name: 'C#', level: '55%' },
-    { icon: 'fa-solid fa-code', name: 'C++', level: '35%' },
+    { icon: 'fa-solid fa-code', name: 'C++', level: '35%' }
 ];
 
 let webskills = [
@@ -24,15 +24,15 @@ let webskills = [
     { name: 'TypeScript', level: '85%' },
     { name: 'React', level: '75%' },
     { name: 'Electron', level: '70%' },
-    { name: 'Aframe.js', level: '25%' },
-    ];
+    { name: 'Aframe.js', level: '25%' }
+];
 
 let projects = [
     { title: 'GBA', description: 'The best way to play your Retro Library on the go.', link: 'https://github.com/Cattn/gba' },
-    { title: 'Kolf', description: 'A kolf mod to allow for advanced Stat Tracking and other multiplayer improvements', link: 'https://github.com/Cattn/kolf' },
+    { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music.', link: 'https://github.com/Maple-Development/Maple' },
     { title: 'Cattn.dev', description: 'This website!', link: 'https://github.com/Cattn/cattn.dev' },
     { title: 'Bunker' , description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker' }
-  ];
+];
 
 let albums = [
     { title: 'To Pimp A Butterfly', image: 'tpab.webp'},
@@ -48,8 +48,7 @@ let albums = [
     { title: 'Mr. Morale & The Big Steppers', image: 'mmatbs.webp'},
     { title: 'Rage Against The Machine', image: 'ratm.webp'},
     { title: 'The Slow Rush', image: 'tsr.webp'},
-    { title: 'untitled unmastered.', image: 'unti.webp'},
-
+    { title: 'untitled unmastered.', image: 'unti.webp'}
 ]
 
 let artists = [
@@ -65,7 +64,7 @@ let artists = [
     { title: 'Olivida Rodrigo', image: 'livia.webp'},
     { title: 'Limp Bizkit', image: 'limpbizkit.webp'},
     { title: 'Korn', image: 'korn.webp'},
-    { title: 'Red Hot Chili Peppers', image: 'rhcp.webp'},
+    { title: 'Red Hot Chili Peppers', image: 'rhcp.webp'}
 ]
 
   onMount(() => {
