@@ -7,6 +7,7 @@
     { icon: 'fa-brands fa-js', name: 'JavaScript', level: '100%' },
     { icon: 'fa-brands fa-html5', name: 'HTML', level: '100%' },
     { icon: 'fa-brands fa-css3-alt', name: 'CSS', level: '100%' },
+    { name: 'TypeScript', level: '97%' },
     { icon: 'fa-brands fa-git-alt', name: 'Git', level: '95%' },
     { icon: 'fa-brands fa-unity', name: 'Unity', level: '65%' },
     { icon: 'fa-brands fa-python', name: 'Python', level: '65%' },
@@ -21,6 +22,7 @@ let webskills = [
     { name: 'Vite', level: '90%' },
     { name: 'Astro', level: '90%' },
     { name: 'Node.js', level: '90%' },
+    { name: 'Express.js', level: '90%' },
     { name: 'TypeScript', level: '85%' },
     { name: 'React', level: '75%' },
     { name: 'Electron', level: '70%' },
@@ -29,7 +31,7 @@ let webskills = [
 
 let projects = [
     { title: 'GBA', description: 'The best way to play your Retro Library on the go.', link: 'https://github.com/Cattn/gba' },
-    { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music.', link: 'https://github.com/Maple-Development/Maple' },
+    { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music. Optional account and social features.', link: 'https://github.com/Cattn/Maple' },
     { title: 'Cattn.dev', description: 'This website!', link: 'https://github.com/Cattn/cattn.dev' },
     { title: 'Bunker' , description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker' }
 ];
@@ -82,7 +84,7 @@ let artists = [
     <img src="/images/cat.jpg" alt="cat" class="w-48 h-48 rounded-md self-center" />
     <div class="flex-grow lg:w-1/3 self-center mr-4">
         <h1 class="text-xl font-bold mt-4 lg:mt-0 lg:ml-4 w-full overflow">
-            Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers.
+            Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers. I'm also interested in engineering as a hobby.
         </h1>
     </div>
     <div class="flex flex-col lg:ml-4 mt-4 lg:mt-0 w-full lg:w-3/6 self-center">
