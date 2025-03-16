@@ -16,7 +16,6 @@
         { icon: 'fa-regular fa-keyboard', name: 'Monkeytype', link: 'https://monkeytype.com/profile/Cattn' },
         { icon: 'fa-solid fa-globe', name: 'mathstudy.dev', link: 'https://mathstudy.dev/' },
         { icon: 'fa-solid fa-music', name: 'Stats.fm', link: 'https://stats.fm/catt' },
-        { icon: 'fa-solid fa-photo-film', name: 'Anilist', link: 'https://anilist.co/user/cattn/' },
     ];
 </script>
 
