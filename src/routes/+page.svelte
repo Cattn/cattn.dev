@@ -84,7 +84,7 @@ let artists = [
     <img src="/images/cat.jpg" alt="cat" class="w-48 h-48 rounded-md self-center" />
     <div class="flex-grow lg:w-1/3 self-center mr-4">
         <h1 class="text-xl font-bold mt-4 lg:mt-0 lg:ml-4 w-full overflow">
-            Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers. I'm also interested in engineering as a hobby.
+            Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers. I'm also interested in engineering as a hobby. Check out some of my photos and media <Button variant="link" href="/media" class="text-blue-500 hover:underline text-lg font-bold p-0 m-0">here</Button>
         </h1>
     </div>
     <div class="flex flex-col lg:ml-4 mt-4 lg:mt-0 w-full lg:w-3/6 self-center">

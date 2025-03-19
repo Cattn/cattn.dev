@@ -9,7 +9,8 @@
         "/projects": 2500,
         "/blog": 900,
         "/about": 1300,
-        "/blog/article/site-creation": 1000
+        "/blog/article/site-creation": 1000,
+        "/media": 1
     }[$page.url.pathname] || 4000;
 </script>
 

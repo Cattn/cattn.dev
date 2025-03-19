@@ -2,11 +2,14 @@
     import {Button} from "$lib/components/ui/button/index.js";
     import '@fortawesome/fontawesome-free/css/all.min.css'
     import { onMount } from "svelte";
+    import { page } from '$app/stores';  
 
+    let mediaPath = $page.url.origin + "/media/";
     onMount(() => {
         document.title = "About - Cattn.dev";
     })
     let socials = [
+        { icon: 'fa-solid fa-image', name: 'Media', link: mediaPath },
         { icon: 'fa-brands fa-github', name: 'GitHub', link: 'https://github.com/Cattn' },
         { icon: 'fa-brands fa-discord', name: 'Discord', link: 'https://discord.com/users/523927057722376204' },
         { icon: 'fa-brands fa-twitch', name: 'Twitch', link: 'https://www.twitch.tv/cattn_' },
