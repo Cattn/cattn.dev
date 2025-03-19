@@ -7,9 +7,9 @@
         document.title = "Media - Cattn.dev";
     })
     let media = [
-        { image: '/images/media/FBT_IMG_1.png', alt: 'Image in VRChat using FBT', desc: 'failed pose... [Japan Shrine]' },
-        { image: '/images/media/VR_NOFBT_1.png', alt: 'Image in VRChat showing me', desc: 'nice framing [Japan Shrine]' },
-        { image: '/images/media/VR_1.png', alt: 'Image in VRChat', desc: 'beautiful scenery [Japan Shrine]' },
+        { image: 'https://maple.kolf.pro:80/images/media/FBT_IMG_1.png', alt: 'Image in VRChat using FBT', desc: 'failed pose... [Japan Shrine]' },
+        { image: 'https://maple.kolf.pro:80/images/media/VR_NOFBT_1.png', alt: 'Image in VRChat showing me', desc: 'nice framing [Japan Shrine]' },
+        { image: 'https://maple.kolf.pro:80/images/media/VR_1.png', alt: 'Image in VRChat', desc: 'beautiful scenery [Japan Shrine]' },
     ];
 </script>
 
@@ -32,7 +32,7 @@
         {#each media as item}
         <div class="border px-4 py-2 flex-col rounded-md shadow-md flex items-center justify-center hover:border-blue-500 h-full text-center p-5">
             <img alt="{item.alt}" src={item.image} class="p-2"/>
-            <Button title="View Full Image" variant="link" href="{$page.url.origin}{item.image}" class="text-blue-500 hover:underline text-xl font-bold p-0 m-0">{item.desc}</Button>
+            <Button title="View Full Image" variant="link" href="{item.image}" class="text-blue-500 hover:underline text-xl font-bold p-0 m-0">{item.desc}</Button>
         </div>
         {/each}
     </div>
