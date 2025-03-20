@@ -15,6 +15,7 @@
         { title: 'mathstudy.dev', description: 'The portfolio site for Math-Study, hosted on mathstudy.dev', link: 'https://github.com/Math-Study-Dev/math-study-dev.github.io/tree/svelte', badges: ['Completed'] },
         { title: 'lab-to-intravet', description: 'An app made in python to convert your lab results to a usable text format in the Vetinary software "Intravet". Available on request.', link: '#', badges: ['Completed'] },
         { title: 'GBA', description: 'The best way to play your Retro Library on the go.', link: 'https://github.com/Cattn/gba', badges: ['Complete'] },
+        { title: 'SPGC', description: 'Student Portal Grade Calculator', link: 'https://github.com/Cattn/SPGC', badges: ['Complete'] },
     ]
 
     let collabProjects = [
