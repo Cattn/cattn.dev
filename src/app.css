@@ -28,6 +28,9 @@
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
  
+    --accent-blue: 210 90% 60%;
+    --accent-blue-foreground: 0 0% 98%;
+    
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
  
@@ -60,6 +63,10 @@
  
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
+ 
+    /* New Blue Accent Color */
+    --accent-blue: 210 90% 60%;
+    --accent-blue-foreground: 0 0% 98%;
  
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;

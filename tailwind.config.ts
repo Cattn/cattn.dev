@@ -40,6 +40,10 @@ const config: Config = {
 					DEFAULT: "hsl(var(--accent) / <alpha-value>)",
 					foreground: "hsl(var(--accent-foreground) / <alpha-value>)"
 				},
+				"accent-blue": {
+					DEFAULT: "hsl(var(--accent-blue) / <alpha-value>)",
+					foreground: "hsl(var(--accent-blue-foreground) / <alpha-value>)"
+				},
 				popover: {
 					DEFAULT: "hsl(var(--popover) / <alpha-value>)",
 					foreground: "hsl(var(--popover-foreground) / <alpha-value>)"
@@ -63,6 +67,9 @@ const config: Config = {
 			}
 		},
 	},
+	plugins: [
+		require('@tailwindcss/typography'),
+	],
 };
 
 export default config;

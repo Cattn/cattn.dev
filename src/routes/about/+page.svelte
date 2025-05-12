@@ -1,8 +1,9 @@
 <script lang="ts">
-    import {Button} from "$lib/components/ui/button/index.js";
-    import '@fortawesome/fontawesome-free/css/all.min.css'
+    import { page } from '$app/stores';
+    import * as Card from "$lib/components/ui/card/index.js";
+    import '@fortawesome/fontawesome-free/css/all.min.css';
     import { onMount } from "svelte";
-    import { page } from '$app/stores';  
+    import { fly } from 'svelte/transition';
 
     let mediaPath = $page.url.origin + "/media/";
     onMount(() => {
@@ -22,27 +23,28 @@
     ];
 </script>
 
-<div class="flex justify-center mt-10">
-    <h1 class="text-5xl font-black text-blue-400">Extras</h1>
-</div>
+<section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly="{{ y: 50, duration: 500, delay: 200 }}">
+    <h1 class="text-5xl font-black text-accent-blue">Extras</h1>
+    <h2 class="mt-1 text-xl font-semibold text-muted-foreground">Socials & More</h2>
+</section>
 
-<div class="flex justify-center ml-4">
-    <h2 class="text-lg font-black text-blue-100">Socials & More</h2>
-</div>
-
-
-    <div class="flex justify-start mt-10 flex-col items-start ml-5">
-        <h1 class="text-3xl font-black text-blue-300">Socials</h1>
-        <p class="text-lg font-black text-blue-100">Where to find me</p>
+<section class="container mx-auto px-4 py-6 mb-10" in:fly="{{ y: 50, duration: 500, delay: 400 }}">
+    <div class="mb-6 text-center sm:text-left">
+        <h2 class="text-3xl font-black text-accent-blue">Socials</h2>
+        <p class="text-lg font-semibold text-muted-foreground">Where to find me</p>
     </div>
 
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2 ml-5 mr-5 mb-5">
-        {#each socials as social}
-        <div class="border px-4 py-2 rounded-md shadow-md flex items-center justify-center hover:border-blue-500 h-full text-center p-5">
-            <i class={`${social.icon} fa-2xl p-2`}></i>
-            <Button variant="link" href="{social.link}" class="text-blue-500 hover:underline text-xl font-bold p-0 m-0">{social.name}</Button>
-        </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {#each socials as social (social.name)}
+            <a href={social.link} target="_blank" rel="noopener noreferrer" class="block group">
+                <Card.Root class="transition-all group-hover:shadow-lg group-hover:border-accent-blue/50 h-full">
+                    <Card.Content class="p-4 flex items-center justify-center space-x-4">
+                        <i class={`${social.icon} fa-xl w-6 text-center text-muted-foreground group-hover:text-accent-blue transition-colors`}></i>
+                        <span class="text-base font-medium text-foreground group-hover:text-accent-blue transition-colors">{social.name}</span>
+                    </Card.Content>
+                </Card.Root>
+            </a>
         {/each}
     </div>
+</section>
 

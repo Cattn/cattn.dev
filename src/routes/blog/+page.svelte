@@ -1,30 +1,100 @@
 <script lang="ts">
-    import articles from './articles.json';
-    import { onMount } from "svelte";
+	import { Badge } from '$lib/components/ui/badge/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import { onMount, tick } from 'svelte';
+	import { writable } from 'svelte/store';
+	import { fly } from 'svelte/transition';
+	import articlesJsonData from './articles.json';
+	import { cn } from '$lib/utils';
 
-    onMount(() => {
-        document.title = "Blog - Cattn.dev";
-    })
+	interface Article {
+		title: string;
+		description: string;
+		link: string;
+		date: string;
+		id: number;
+		tags?: string[]; 
+	}
 
-    import {Button} from "$lib/components/ui/button/index.js";
+	const articlesData: Article[] = articlesJsonData;
+
+	let allTags = ['All', ...new Set(articlesData.flatMap(article => article.tags || []))];
+	let selectedTag = writable('All');
+	let filteredArticles: Article[] = []; 
+
+	$: {
+		if ($selectedTag === 'All') {
+			filteredArticles = articlesData as Article[]; 
+		} else {
+			filteredArticles = articlesData.filter((article: Article) => 
+				article.tags && article.tags.includes($selectedTag)
+			);
+		}
+		tick();
+	}
+
+	onMount(() => {
+		document.title = "Blog - Cattn.dev";
+	});
+
+	function selectTag(tag: string) {
+		selectedTag.set(tag);
+	}
+
 </script>
 
-<div class="flex justify-center mt-10">
-    <h1 class="text-5xl font-black text-blue-400">Blog</h1>
-</div>
+<section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly="{{ y: 50, duration: 500, delay: 200 }}">
+	<h1 class="text-5xl font-black text-accent-blue">Blog</h1>
+	<h2 class="mt-1 text-xl font-semibold text-muted-foreground">My thoughts &amp; Updates</h2>
+</section>
 
-<div class="flex justify-center ml-6">
-    <h2 class="text-lg font-black text-blue-100">My thoughts</h2>
-</div>
+<section class="container mx-auto px-4 py-4 text-center" in:fly="{{ y: 50, duration: 500, delay: 300 }}">
+	<div class="flex flex-wrap justify-center gap-2">
+		{#each allTags as tag (tag)}
+			<Button 
+				variant={$selectedTag === tag ? 'secondary' : 'outline'}
+				on:click={() => selectTag(tag)}
+				class={cn(
+					'transition-all',
+					$selectedTag === tag
+						? 'bg-accent-blue text-accent-blue-foreground hover:bg-accent-blue/90'
+						: 'hover:bg-accent-blue/10 hover:text-accent-blue'
+				)}
+			>
+				{tag}
+			</Button>
+		{/each}
+	</div>
+</section>
 
-<div class="flex flex-col items-center mt-2 mx-5">
-    {#each articles as article}
-        <div class="mt-5 w-full sm:w-1/2 lg:w-1/3 border rounded-md shadow-md flex flex-col items-center justify-center hover:border-blue-500 h-full text-center p-4 mx-2">
-            <Button variant="link" href="{article.link}" class="p-2 text-blue-500 hover:underline text-xl font-bold m-0">
-                {article.title}
-            </Button>
-            <p>{article.description}</p>
-            <p class="text-sm text-blue-800">{article.date}</p>
-        </div>
-    {/each}
-</div>
+<section class="container mx-auto px-4 py-6 mb-10">
+	{#if filteredArticles.length > 0}
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{#each filteredArticles as article (article.id)}
+				<div in:fly="{{ y: 20, duration: 300, delay: 100 }}">
+					<a href={article.link} class="block h-full group">
+						<Card.Root class="h-full flex flex-col transition-all group-hover:shadow-lg group-hover:border-accent-blue/50">
+							<Card.Header>
+								<Card.Title class="text-lg group-hover:text-accent-blue transition-colors">{article.title}</Card.Title>
+								<Card.Description>{article.date}</Card.Description>
+							</Card.Header>
+							<Card.Content class="flex-grow">
+								<p class="text-sm text-muted-foreground mb-3">{article.description}</p>
+								<div class="flex flex-wrap gap-1">
+									{#each article.tags || [] as tag (tag)}
+										<Badge variant="secondary">{tag}</Badge>
+									{/each}
+								</div>
+							</Card.Content>
+						</Card.Root>
+					</a>
+				</div>
+			{/each}
+		</div>
+	{:else}
+		<div class="text-center py-10 text-muted-foreground" in:fly="{{ y: 20, duration: 300 }}">
+			No articles found for the selected tag: {$selectedTag}
+		</div>
+	{/if}
+</section>
