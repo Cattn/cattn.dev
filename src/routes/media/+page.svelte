@@ -7,9 +7,9 @@
         document.title = "Media - Cattn.dev";
     })
     let media = [
-        { image: 'https://maple.kolf.pro:80/images/media/FBT_IMG_1.png', alt: 'Image in VRChat using FBT', desc: 'failed pose... [Japan Shrine]' },
-        { image: 'https://maple.kolf.pro:80/images/media/VR_NOFBT_1.png', alt: 'Image in VRChat showing me', desc: 'nice framing [Japan Shrine]' },
-        { image: 'https://maple.kolf.pro:80/images/media/VR_1.png', alt: 'Image in VRChat', desc: 'beautiful scenery [Japan Shrine]' },
+        { image: 'https://maple.kolf.pro/SMS/uploads/FBT_IMG_1.png', alt: 'Image in VRChat using FBT', desc: 'failed pose... [Japan Shrine]' },
+        { image: 'https://maple.kolf.pro/SMS/upload/VR_NOFBT_1.png', alt: 'Image in VRChat showing me', desc: 'nice framing [Japan Shrine]' },
+        { image: 'https://maple.kolf.pro/SMS/upload/VR_1.png', alt: 'Image in VRChat', desc: 'beautiful scenery [Japan Shrine]' },
     ];
 </script>
 
