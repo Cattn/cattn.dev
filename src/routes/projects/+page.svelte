@@ -7,9 +7,14 @@
 
     let featuredProjects = [
         { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music. Optional account and social features!', link: 'https://github.com/Cattn/Maple', badges: ['Active', 'In Progress'] },
-        { title: 'Bunker', description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker', badges: ['Active', 'In Progress'] },
+        { title: 'SMS', description: 'Upload, share, and manage your files quickly. Supports file expiration, quick filters, and previews!', link: 'https://github.com/Cattn/SMS', badges: ['Complete'] },
+        { title: 'do-it!', description: 'A game-ified notes & to-do app that makes getting sh*t done, fun!', link: 'https://github.com/Cattn/do-it.', badges: ['In Progress'] },
+        { title: 'FSai', description: 'Perform actions & manage your filesystem with the power of AI!', link: 'https://github.com/Cattn/FSai', badges: ['Complete'] },
+        { title: 'portalDraw', description: 'Draw & Communicate through a portal!', link: 'https://github.com/Cattn/portalDraw', badges: ['Complete'] },
+        { title: 'Bunker', description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker', badges: ['Inactive', 'Complete'] },
         { title: 'Kolf', description: 'A mod for kolf that allows for advanced stat tracking, better multiplayer, and more.', link: 'https://github.com/Cattn/kolf', badges: ['Inactive', 'In Progress'] },
-        { title: 'Cattn.dev', description: 'This website!', link: 'https://github.com/Cattn/cattn.dev', badges: ['Active', 'In Progress'] },
+        { title: 'maple-home', description: 'Maple landing page!', link: 'https://github.com/Cattn/maple-home', badges: ['Complete'] },
+        { title: 'mapleRPC', description: 'A vencord mod that allows you to display your current playing song (on Maple) in your Discord status.', link: 'https://github.com/Cattn/mapleRPC', badges: ['Complete'] },
     ]
 
     let otherProjects = [
@@ -39,7 +44,7 @@ onMount(() => {
 
 <section class="container mx-auto px-4 py-6" in:fly="{{ y: 50, duration: 500, delay: 400 }}">
     <h2 class="text-3xl font-black text-accent-blue mb-6 text-center sm:text-left">Featured Work</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {#each featuredProjects as project (project.title)}
             <Card.Root class="flex flex-col overflow-hidden transition-all hover:shadow-lg hover:border-accent-blue/50 h-full">
                 <Card.Header class="p-0">
