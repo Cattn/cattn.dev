@@ -7,9 +7,9 @@
         document.title = "Media - Cattn.dev";
     })
     let VRCmedia = [
-        { image: 'https://maple.kolf.pro/SMS/uploads/FBT_IMG_1.png', alt: 'Image in VRChat using FBT', desc: 'failed pose... [Japan Shrine]' },
-        { image: 'https://maple.kolf.pro/SMS/uploads/VR_NOFBT_1.png', alt: 'Image in VRChat showing me', desc: 'nice framing [Japan Shrine]' },
-        { image: 'https://maple.kolf.pro/SMS/uploads/VR_1.png', alt: 'Image in VRChat', desc: 'beautiful scenery [Japan Shrine]' },
+        { image: 'https://play.maple.music/SMS/uploads/FBT_IMG_1.png', alt: 'Image in VRChat using FBT', desc: 'failed pose... [Japan Shrine]' },
+        { image: 'https://play.maple.music/SMS/uploads/VR_NOFBT_1.png', alt: 'Image in VRChat showing me', desc: 'nice framing [Japan Shrine]' },
+        { image: 'https://play.maple.music/SMS/uploads/VR_1.png', alt: 'Image in VRChat', desc: 'beautiful scenery [Japan Shrine]' },
     ];
 
     let otherMedia = [
