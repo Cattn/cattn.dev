@@ -32,10 +32,10 @@ let webskills = [
 ];
 
 let projects = [
-    { title: 'GBA', description: 'The best way to play your Retro Library on the go.', link: 'https://github.com/Cattn/gba' },
-    { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music. Optional account and social features.', link: 'https://github.com/Cattn/Maple' },
-    { title: 'Cattn.dev', description: 'This website!', link: 'https://github.com/Cattn/cattn.dev' },
-    { title: 'Bunker' , description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker' }
+  { title: 'SMS', description: 'Upload, share, and manage your files quickly. Supports file expiration, quick filters, and previews!', link: 'https://github.com/Cattn/SMS', badges: ['Complete'] },
+  { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music. Optional account and social features.', link: 'https://github.com/Cattn/Maple', badges: ['Active', 'In Progress'] },
+  { title: 'Cattn.dev', description: 'This website!', link: 'https://github.com/Cattn/cattn.dev', badges: ['Complete'] },
+  { title: 'senseshift-face-pcb', description: 'A custom pcb that fits the X6 Facial Haptic Interface', link: 'https://github.com/Cattn/senseshift-face-pcb', badges: ['Complete'] },
 ];
 
 let albums = [
@@ -83,7 +83,7 @@ let artists = [
   <div class="mt-8 flex flex-col lg:flex-row items-center justify-center gap-8">
     <img src="/images/cat.jpg" alt="cat" class="w-40 h-40 rounded-full shadow-lg" />
     <p class="max-w-xl text-lg text-foreground leading-relaxed">
-      Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers. I'm also interested in engineering as a hobby. Check out some of my photos and media <Button variant="link" href="/media" class="text-accent-blue hover:underline text-lg font-bold p-0 m-0 inline-block">here</Button>.
+      Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers. I'm also interested in electronics as a hobby. Check out some of my photos and media <Button variant="link" href="/media" class="text-accent-blue hover:underline text-lg font-bold p-0 m-0 inline-block">here</Button>.
     </p>
   </div>
 </section>
