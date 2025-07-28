@@ -1,18 +1,10 @@
 [
     {
-        "title": "Creating this site",
-        "description": "The process of creating this site",
-        "link": "/blog/article/site-creation",
-        "date": "08/10/2024",
-        "id": 0,
-        "tags": ["meta", "svelte", "webdev"]
-    },
-    {
-        "title": "Creating UMLA",
-        "description": "The inspiration and process behind my development of UMLA.",
-        "link": "/blog/article/umla-creation",
-        "date": "08/10/2024",
+        "title": "The story of Maple (pt. 1)",
+        "description": "A bit of a ramble about why local music libraries are so convienient, and why I made my own frontend for them.",
+        "link": "/blog/article/maple",
+        "date": "07/28/2025",
         "id": 1,
-        "tags": ["project", "music", "svelte", "webdev"]
+        "tags": ["project", "music", "svelte", "webdev", "typescript"]
     }
 ]
