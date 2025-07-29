@@ -25,7 +25,6 @@ let webskills = [
     { name: 'Astro', level: '90%' },
     { name: 'Node.js', level: '90%' },
     { name: 'Express.js', level: '90%' },
-    { name: 'TypeScript', level: '85%' },
     { name: 'React', level: '75%' },
     { name: 'Electron', level: '70%' },
     { name: 'Aframe.js', level: '25%' }
