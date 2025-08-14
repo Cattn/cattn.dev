@@ -17,7 +17,7 @@
 		tags?: string[]; 
 	}
 
-	const articlesData: Article[] = articlesJsonData;
+	const articlesData: Article[] = articlesJsonData.filter((article: Article) => article.tags && article.tags.length > 0).sort((a, b) => b.id - a.id);
 
 	let allTags = ['All', ...new Set(articlesData.flatMap(article => article.tags || []))];
 	let selectedTag = writable('All');
