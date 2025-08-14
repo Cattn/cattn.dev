@@ -9,6 +9,9 @@
         { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music. Optional account and social features!', link: 'https://github.com/Cattn/Maple', badges: ['Active', 'In Progress'] },
         { title: 'SMS', description: 'Upload, share, and manage your files quickly. Supports file expiration, quick filters, and previews!', link: 'https://github.com/Cattn/SMS', badges: ['Complete'] },
         { title: 'senseshift-face-pcb', description: 'A custom pcb that fits the X6 Facial Haptic Interface', link: 'https://github.com/Cattn/senseshift-face-pcb', badges: ['Complete'] },
+        { title: 'tone-match', description: 'find your match quick in this elimination-style game of sound & color!', link: 'https://github.com/Cattn/tone-match', badges: ['Complete'] },
+        { title: 'wreckedShip', description: 'Work together with 1-3 other people to pilot and defend your ship against the monsters. Make sure not to get... shipwrecked!', link: 'https://github.com/Cattn/wreckedShip', badges: ['Complete'] },
+        { title: 'hdr-paint', description: 'A nice little canvas you can draw in, but with HDR colors!', link: 'https://github.com/Cattn/hdr-paint', badges: ['Complete'] },
         { title: 'do-it!', description: 'A game-ified notes & to-do app that makes getting sh*t done, fun!', link: 'https://github.com/Cattn/do-it.', badges: ['In Progress'] },
         { title: 'FSai', description: 'Perform actions & manage your filesystem with the power of AI!', link: 'https://github.com/Cattn/FSai', badges: ['Complete'] },
         { title: 'portalDraw', description: 'Draw & Communicate through a portal!', link: 'https://github.com/Cattn/portalDraw', badges: ['Complete'] },
@@ -40,7 +43,7 @@ onMount(() => {
 
 <section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly="{{ y: 50, duration: 500, delay: 200 }}">
     <h1 class="text-5xl font-black text-accent-blue">Projects</h1>
-    <h2 class="mt-1 text-xl font-semibold text-muted-foreground">and unfinished work</h2>
+    <h2 class="mt-1 text-xl font-semibold text-muted-foreground">and completed work</h2>
 </section>
 
 <section class="container mx-auto px-4 py-6" in:fly="{{ y: 50, duration: 500, delay: 400 }}">
