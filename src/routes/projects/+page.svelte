@@ -9,15 +9,15 @@
         { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music. Optional account and social features!', link: 'https://github.com/Cattn/Maple', badges: ['Active', 'In Progress'] },
         { title: 'SMS', description: 'Upload, share, and manage your files quickly. Supports file expiration, quick filters, and previews!', link: 'https://github.com/Cattn/SMS', badges: ['Complete'] },
         { title: 'senseshift-face-pcb', description: 'A custom pcb that fits the X6 Facial Haptic Interface', link: 'https://github.com/Cattn/senseshift-face-pcb', badges: ['Complete'] },
+        { title: 'do-it!', description: 'A game-ified notes & to-do app that makes getting sh*t done, fun!', link: 'https://github.com/Cattn/do-it.', badges: ['In Progress'] },
         { title: 'tone-match', description: 'find your match quick in this elimination-style game of sound & color!', link: 'https://github.com/Cattn/tone-match', badges: ['Complete'] },
         { title: 'wreckedShip', description: 'Work together with 1-3 other people to pilot and defend your ship against the monsters. Make sure not to get... shipwrecked!', link: 'https://github.com/Cattn/wreckedShip', badges: ['Complete'] },
+        { title: 'maple-home', description: 'Maple landing page!', link: 'https://github.com/Cattn/maple-home', badges: ['Complete'] },
         { title: 'hdr-paint', description: 'A nice little canvas you can draw in, but with HDR colors!', link: 'https://github.com/Cattn/hdr-paint', badges: ['Complete'] },
-        { title: 'do-it!', description: 'A game-ified notes & to-do app that makes getting sh*t done, fun!', link: 'https://github.com/Cattn/do-it.', badges: ['In Progress'] },
         { title: 'FSai', description: 'Perform actions & manage your filesystem with the power of AI!', link: 'https://github.com/Cattn/FSai', badges: ['Complete'] },
         { title: 'portalDraw', description: 'Draw & Communicate through a portal!', link: 'https://github.com/Cattn/portalDraw', badges: ['Complete'] },
         { title: 'Bunker', description: 'Bunker is an application to privately use your favorite tools without being spied on by filtering extensions.', link: 'https://github.com/bunkerweb/bunker', badges: ['Inactive', 'Complete'] },
         { title: 'Kolf', description: 'A mod for kolf that allows for advanced stat tracking, better multiplayer, and more.', link: 'https://github.com/Cattn/kolf', badges: ['Inactive', 'In Progress'] },
-        { title: 'maple-home', description: 'Maple landing page!', link: 'https://github.com/Cattn/maple-home', badges: ['Complete'] },
         { title: 'mapleRPC', description: 'A vencord mod that allows you to display your current playing song (on Maple) in your Discord status.', link: 'https://github.com/Cattn/mapleRPC', badges: ['Complete'] },
     ]
 
