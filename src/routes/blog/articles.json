@@ -6,5 +6,13 @@
         "date": "07/28/2025",
         "id": 1,
         "tags": ["project", "music", "svelte", "webdev", "typescript"]
+    },
+    {
+        "title": "Building 3 projects in 3 days: Shipwrecked",
+        "description": "And also some other thoughts & reflections on my experience at shipwrecked.",
+        "link": "/blog/article/shipwrecked",
+        "date": "08/14/2025",
+        "id": 2,
+        "tags": ["typescript", "shipwrecked", "hackclub", "hackathon", "game", "webdev"]
     }
 ]
