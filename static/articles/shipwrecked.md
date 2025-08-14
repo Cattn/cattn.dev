@@ -91,7 +91,7 @@ My solution was to create a combination of these two methods, standardizing how 
 
 hdr-paint makes use of a hidden image/video to trick your phone into thinking there's HDR content on screen. Then, by using a combination of `backdrop-filter: brightness(10);` on the body, and `display-p3` values above 100%, I'm able to display colors above their normal value, allowing them to be rendered within the HDR colorspace!
 
-> Screenshot of the site - this should be in HDR on supported devices.
+> Screenshot of the site - download it to view in HDR!
 
 <img width="400" src="https://play.maple.music/SMS/uploads/Screenshot_20250814-161855.png">
 
@@ -118,3 +118,4 @@ I'll probably write blogs about those projects as I complete them. Otherwise, th
 
 
 <img src="https://play.maple.music/SMS/uploads/cattn.dev/PXL_20250808_225540278.RAW-01.COVER.jpg">
+
