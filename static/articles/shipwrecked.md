@@ -56,7 +56,7 @@ I came up with this concept while play-testing my game, as I realized that 3 sho
 
 <h4><em>other info?</em></h4>
 
-I created all of the assets myself for this project (except for the background)! Some where rough outlines of existing creatures, or in one case (the ship) a recreation of the official shipwrecked ship. I've shown some below.
+I created all of the assets myself for this project (except for the background)! Some were rough outlines of existing creatures, or in one case (the ship) a recreation of the official shipwrecked ship. I've shown some below.
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
@@ -115,5 +115,6 @@ I'll probably write blogs about those projects as I complete them. Otherwise, th
 <img src="https://play.maple.music/SMS/uploads/cattn.dev/PXL_20250809_015901881.RAW-01.MP.COVER.jpg">
 
 <img src="https://play.maple.music/SMS/uploads/cattn.dev/PXL_20250809_002108377.NIGHT.RAW-01.COVER.jpg">
+
 
 <img src="https://play.maple.music/SMS/uploads/cattn.dev/PXL_20250808_225540278.RAW-01.COVER.jpg">
