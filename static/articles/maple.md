@@ -29,7 +29,7 @@ Building a good solution for a local music library has always fascinated me. Eve
 One of the main issues I've had with similar apps is the lack of good social features, and convenience. Maple is an attempt to solve both of those issues.
 
 ### Social Features
-While still being built up, Maple already provides a quick way to checkup on your friends most recent track, and put out your own listening history. There's plenty of room to expand on this, such as with built in stat-tracking, which is something [I already love...](https://stats.fm/catt)
+While still being built up, Maple already provides a quick way to check-up on your friends most recent track, and put out your own listening history. There's plenty of room to expand on this, such as with built in stat-tracking, which is something [I already love...](https://stats.fm/catt)
 
 ### Convenience
 I find that I personally have a local music library on all of my devices, and that it's not extremely large in file-size. So one of the main annoyances with existing solutions, such as jellyfin, is the high "cost" of setup, and the need to centralize my music immediately. This centralization offers almost no benefits to someone like me, as it just requires more steps to import or download music, making the entire process *slow*. 

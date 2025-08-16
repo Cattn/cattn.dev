@@ -22,5 +22,13 @@
         "date": "08/14/2025",
         "id": 3,
         "tags": ["project", "thoughts", "advice", "design"]
+    },
+    {
+        "title": "The story of Maple (pt. 2)",
+        "description": "So yeah, I redesigned it... But why?",
+        "link": "/blog/article/maple2",
+        "date": "08/14/2025",
+        "id": 4,
+        "tags": ["project", "design", "music", "typescript", "svelte", "webdev"]
     }
 ]
