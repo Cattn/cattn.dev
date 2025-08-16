@@ -11,10 +11,10 @@
     { icon: 'fa-brands fa-css3-alt', name: 'CSS', level: '100%' },
     { name: 'TypeScript', level: '97%' },
     { icon: 'fa-brands fa-git-alt', name: 'Git', level: '95%' },
+    { icon: 'fa-brands fa-python', name: 'Python', level: '90%' },
     { icon: 'fa-brands fa-unity', name: 'Unity', level: '65%' },
-    { icon: 'fa-brands fa-python', name: 'Python', level: '65%' },
-    { icon: 'fa-solid fa-code', name: 'C#', level: '55%' },
-    { icon: 'fa-solid fa-code', name: 'C++', level: '35%' }
+    { icon: 'fa-solid fa-code', name: 'C#', level: '60%' },
+    { icon: 'fa-solid fa-code', name: 'C++', level: '15%' }
 ];
 
 let webskills = [
