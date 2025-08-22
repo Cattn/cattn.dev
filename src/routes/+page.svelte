@@ -82,7 +82,7 @@ let artists = [
   <div class="mt-8 flex flex-col lg:flex-row items-center justify-center gap-8">
     <img src="/images/cat.jpg" alt="cat" class="w-40 h-40 rounded-full shadow-lg" />
     <p class="max-w-xl text-lg text-foreground leading-relaxed">
-      Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers. I'm also interested in electronics as a hobby. Check out some of my photos and media <Button variant="link" href="/media" class="text-accent-blue hover:underline text-lg font-bold p-0 m-0 inline-block">here</Button>.
+      Hi! I'm Logan, aka Cattn. I am a fullstack developer, linux user, and love to create things. I mostly create front-ends and toy around with games! I also love VR, and have built my own FBT/Slime Trackers. I'm also interested in electronics as a hobby. Check out my personal discord server <Button variant="link" href="https://discord.gg/math-study-934807331668099142" class="text-accent-blue hover:underline text-lg font-bold p-0 m-0 inline-block">here</Button>.
     </p>
   </div>
 </section>
