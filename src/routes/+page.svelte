@@ -14,7 +14,7 @@
     { icon: 'fa-brands fa-python', name: 'Python', level: '90%' },
     { icon: 'fa-brands fa-unity', name: 'Unity', level: '65%' },
     { icon: 'fa-solid fa-code', name: 'C#', level: '60%' },
-    { icon: 'fa-solid fa-code', name: 'C++', level: '15%' }
+    { icon: 'fa-solid fa-code', name: 'Godot', level:'35%' },
 ];
 
 let webskills = [
