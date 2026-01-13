@@ -17,6 +17,12 @@
 	const article = articles.find((article) => article.link === $page.url.pathname);
 
 	let htmlContent = $state("<p>Loading Article...</p>");
+	let contentParts = $state([{ key: 'h0', type: 'html', html: htmlContent }]);
+
+	const libComponents = import.meta.glob('/src/lib/*.svelte');
+	const componentCache = new Map();
+	const componentTagRe = /<([A-Z][\w]*)\b([^>]*)\/>/g;
+	const placeholderRe = /<!--__SVELTE_COMPONENT_(\d+)__-->/g;
 
 	onMount(() => {
 		loadArticle();
@@ -25,23 +31,124 @@
 		}
 	});
 
+	function setHtml(html: string) {
+		htmlContent = html;
+		contentParts = [{ key: 'h0', type: 'html', html }];
+	}
+
+	function parseProps(attrString: string) {
+		const props: Record<string, any> = {};
+		const re = /([A-Za-z_][\w-]*)(?:=(?:"([^"]*)"|'([^']*)'|([^\s"'>]+)))?/g;
+		let match;
+		while ((match = re.exec(attrString))) {
+			const key = match[1];
+			const raw = match[2] ?? match[3] ?? match[4];
+			if (raw === undefined) {
+				props[key] = true;
+				continue;
+			}
+			if (raw === 'true') props[key] = true;
+			else if (raw === 'false') props[key] = false;
+			else if (raw !== '' && !Number.isNaN(Number(raw))) props[key] = Number(raw);
+			else props[key] = raw;
+		}
+		return props;
+	}
+
+	function tokenizeComponents(mdText: string) {
+		const requests: Array<{ name: string; props: Record<string, any> }> = [];
+		let inCodeBlock = false;
+		let idx = 0;
+		const lines = mdText.split('\n');
+
+		const processedLines = lines.map((line) => {
+			const trimmed = line.trimStart();
+			if (trimmed.startsWith('```')) {
+				inCodeBlock = !inCodeBlock;
+				return line;
+			}
+			if (inCodeBlock) return line;
+
+			return line.replace(componentTagRe, (_full, name, attrs) => {
+				const token = `<!--__SVELTE_COMPONENT_${idx}__-->`;
+				requests.push({ name, props: parseProps(attrs ?? '') });
+				idx += 1;
+				return token;
+			});
+		});
+
+		return { md: processedLines.join('\n'), requests };
+	}
+
+	async function loadLibComponent(name: string) {
+		if (componentCache.has(name)) return componentCache.get(name);
+		const path = `/src/lib/${name}.svelte`;
+		const loader = libComponents[path];
+		if (!loader) return null;
+		try {
+			const mod = await loader();
+			const cmp = mod?.default ?? null;
+			componentCache.set(name, cmp);
+			return cmp;
+		} catch {
+			return null;
+		}
+	}
+
+	async function toParts(renderedHtml: string, requests: Array<{ name: string; props: Record<string, any> }>) {
+		const parts: Array<any> = [];
+		let partIdx = 0;
+		let lastIndex = 0;
+		let match;
+		while ((match = placeholderRe.exec(renderedHtml))) {
+			const start = match.index;
+			const end = match.index + match[0].length;
+			const before = renderedHtml.slice(lastIndex, start);
+			if (before) parts.push({ key: `h${partIdx++}`, type: 'html', html: before });
+
+			const reqIdx = Number(match[1]);
+			const req = requests[reqIdx];
+			if (!req) {
+				parts.push({ key: `h${partIdx++}`, type: 'html', html: `<p>Unknown component.</p>` });
+			} else {
+				const component = await loadLibComponent(req.name);
+				if (component) parts.push({ key: `c${partIdx++}`, type: 'component', component, props: req.props });
+				else parts.push({ key: `h${partIdx++}`, type: 'html', html: `<p>Component not found: ${req.name}</p>` });
+			}
+
+			lastIndex = end;
+		}
+
+		const after = renderedHtml.slice(lastIndex);
+		if (after) parts.push({ key: `h${partIdx++}`, type: 'html', html: after });
+		if (!parts.length) parts.push({ key: 'h0', type: 'html', html: renderedHtml });
+		return parts;
+	}
+
+	async function renderMarkdown(mdText: string) {
+		const md = markdownit({ html: true, linkify: true, typographer: true });
+		const { md: processedMd, requests } = tokenizeComponents(mdText);
+		const rendered = md.render(processedMd);
+		htmlContent = rendered;
+		contentParts = await toParts(rendered, requests);
+	}
+
 	async function loadArticle() {
 		try {
 			const res = await fetch(`/articles/${data.slug}.md`);
 			if (!res.ok) {
 				if (res.status === 404) {
-					htmlContent = "<p>Article Not Found.</p>";
+					setHtml("<p>Article Not Found.</p>");
 				} else {
-					htmlContent = `<p>Error loading article: ${res.statusText}</p>`;
+					setHtml(`<p>Error loading article: ${res.statusText}</p>`);
 				}
 				return;
 			}
 			const mdContent = await res.text();
-			const md = markdownit({ html: true, linkify: true, typographer: true });
-			htmlContent = md.render(mdContent);
+			await renderMarkdown(mdContent);
 		} catch (error) {
 			console.error("Failed to load article:", error);
-			htmlContent = "<p>Error loading article.</p>";
+			setHtml("<p>Error loading article.</p>");
 		}
 	}
 
@@ -71,7 +178,13 @@
 	
 	<section class="container mx-auto px-4 py-6 mb-10 max-w-3xl" in:fly="{{ y: 50, duration: 500, delay: 400 }}">
 		<div class="prose prose-invert max-w-none">
-			{@html htmlContent}
+			{#each contentParts as part (part.key)}
+				{#if part.type === 'html'}
+					{@html part.html}
+				{:else if part.type === 'component'}
+					<svelte:component this={part.component} {...part.props} />
+				{/if}
+			{/each}
 		</div>
 	</section>
 

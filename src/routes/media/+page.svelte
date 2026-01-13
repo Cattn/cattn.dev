@@ -20,7 +20,7 @@
 </script>
 
 <section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly="{{ y: 50, duration: 500, delay: 200 }}">
-    <h1 class="text-5xl font-black text-accent-blue">Media</h1>
+    <h1 class="text-5xl font-black text-accent-blue">Media</h1>a
     <h2 class="mt-1 text-xl font-semibold text-muted-foreground">Assorted Photos</h2>
 </section>
 

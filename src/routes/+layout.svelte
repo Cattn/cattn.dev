@@ -3,6 +3,7 @@
 	import '../app.css';
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
+	import { HDRRouter } from '@cattn/hdr';
   
 </script>
 
@@ -11,3 +12,4 @@
 {@render children?.()}
 </div>
 
+<HDRRouter />
