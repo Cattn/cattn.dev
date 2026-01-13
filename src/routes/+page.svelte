@@ -5,30 +5,52 @@
   import { onMount } from "svelte";
   import { fly } from 'svelte/transition';
 
-  let skills = [
-    { icon: 'fa-brands fa-js', name: 'JavaScript', level: '100%' },
-    { icon: 'fa-brands fa-html5', name: 'HTML', level: '100%' },
-    { icon: 'fa-brands fa-css3-alt', name: 'CSS', level: '100%' },
-    { name: 'TypeScript', level: '97%' },
-    { icon: 'fa-brands fa-git-alt', name: 'Git', level: '95%' },
-    { icon: 'fa-brands fa-python', name: 'Python', level: '90%' },
-    { icon: 'fa-brands fa-unity', name: 'Unity', level: '65%' },
-    { icon: 'fa-solid fa-code', name: 'C#', level: '60%' },
-    { icon: 'fa-solid fa-code', name: 'Godot', level:'35%' },
-];
+  type SkillItem = { name: string; icon?: string };
+  type SkillGroup = { title: string; items: SkillItem[] };
 
-let webskills = [
-    { name: 'Tailwind', level: '95%' },
-    { name: 'SvelteKit', level: '90%' },
-    { name: 'Svelte', level: '87%' },
-    { name: 'Vite', level: '90%' },
-    { name: 'Astro', level: '90%' },
-    { name: 'Node.js', level: '90%' },
-    { name: 'Express.js', level: '90%' },
-    { name: 'React', level: '75%' },
-    { name: 'Electron', level: '70%' },
-    { name: 'Aframe.js', level: '25%' }
-];
+  let skillGroups: SkillGroup[] = [
+    {
+      title: "Languages",
+      items: [
+        { icon: 'fa-brands fa-js', name: 'JavaScript' },
+        { icon: 'fa-solid fa-code', name: 'TypeScript' },
+        { icon: 'fa-brands fa-python', name: 'Python' },
+        { icon: 'fa-brands fa-html5', name: 'HTML' },
+        { icon: 'fa-brands fa-css3-alt', name: 'CSS' },
+        { icon: 'fa-brands fa-java', name: 'Java' },
+        { icon: 'fa-solid fa-code', name: 'C#' },
+        { icon: 'fa-solid fa-code', name: 'C++' },
+      ],
+    },
+    {
+      title: "Web",
+      items: [
+        { name: 'SvelteKit' },
+        { name: 'Svelte' },
+        { name: 'React' },
+        { name: 'Astro' },
+        { name: 'Tailwind' },
+        { name: 'Vite' },
+        { name: 'Node.js' },
+        { name: 'Express.js' },
+        { name: 'Electron' },
+        { name: 'Aframe.js' },
+        { name: 'Tauri' },
+      ],
+    },
+    {
+      title: "Tools",
+      items: [{ icon: 'fa-brands fa-git-alt', name: 'Git' }],
+    },
+    {
+      title: "Game Dev",
+      items: [
+        { icon: 'fa-brands fa-unity', name: 'Unity' },
+        { icon: 'fa-solid fa-code', name: 'Godot' },
+        { icon: 'fa-solid fa-code', name: 'Unreal Engine' },
+      ],
+    },
+  ];
 
 let projects = [
   { title: 'SMS', description: 'Upload, share, and manage your files quickly. Supports file expiration, quick filters, and previews!', link: 'https://github.com/Cattn/SMS', badges: ['Complete'] },
@@ -72,8 +94,7 @@ let artists = [
 
   onMount(() => {
     document.title = "Home - Cattn.dev";
-  });
-
+  })
 </script>
 
 <section class="container mx-auto px-4 py-16 text-center" in:fly="{{ y: 50, duration: 500, delay: 200 }}">
@@ -107,34 +128,26 @@ let artists = [
 
 <section class="container mx-auto px-4 py-10" in:fly="{{ y: 50, duration: 500, delay: 500 }}">
   <h2 class="text-3xl font-black text-primary mb-6 text-center lg:text-left">Things I know</h2>
-  <div class="border border-border rounded-lg p-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {#each skills as skill}
-            <div class="flex flex-col items-center">
-                <i class={`${skill.icon || 'fa-solid fa-code'} fa-2xl text-muted-foreground mb-3`}></i>
-                <h3 class="text-xl font-semibold text-foreground mb-2">{skill.name}</h3>
-                <div class="w-full bg-muted rounded-full h-2.5">
-                    <div class="bg-accent-blue h-2.5 rounded-full" style="width: {skill.level};"></div>
-                </div>
-            </div>
-        {/each}
-    </div>
-  </div>
-</section>
-
-<section class="container mx-auto px-4 py-10" in:fly="{{ y: 50, duration: 500, delay: 600 }}">
-  <h2 class="text-3xl font-black text-primary mb-6 text-center lg:text-left">Web Technologies</h2>
-  <div class="border border-border rounded-lg p-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {#each webskills as skill}
-            <div class="flex flex-col items-center">
-                <h3 class="text-xl font-semibold text-foreground mb-2">{skill.name}</h3>
-                <div class="w-full bg-muted rounded-full h-2.5">
-                    <div class="bg-accent-blue h-2.5 rounded-full" style="width: {skill.level};"></div>
-                </div>
-            </div>
-        {/each}
-    </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    {#each skillGroups as group (group.title)}
+      <Card.Root class="transition-all hover:shadow-lg hover:border-accent-blue/50">
+        <Card.Header>
+          <Card.Title class="text-xl font-bold">{group.title}</Card.Title>
+        </Card.Header>
+        <Card.Content>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {#each group.items as item (item.name)}
+              <div class="flex items-center gap-2 rounded-md border border-border bg-muted/30 px-3 py-2">
+                {#if item.icon}
+                  <i class={`${item.icon} text-muted-foreground`}></i>
+                {/if}
+                <span class="text-sm font-semibold text-foreground">{item.name}</span>
+              </div>
+            {/each}
+          </div>
+        </Card.Content>
+      </Card.Root>
+    {/each}
   </div>
 </section>
 
