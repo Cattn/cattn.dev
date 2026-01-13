@@ -8,11 +8,15 @@
 	import { Button } from '$lib/components/ui/button'; 
 	import articles from '../../articles.json';
 
-	export let data; 
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 
 	const article = articles.find((article) => article.link === $page.url.pathname);
 
-	let htmlContent = "<p>Loading Article...</p>";
+	let htmlContent = $state("<p>Loading Article...</p>");
 
 	onMount(() => {
 		loadArticle();

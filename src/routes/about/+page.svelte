@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
     import * as Card from "$lib/components/ui/card/index.js";
     import '@fortawesome/fontawesome-free/css/all.min.css';
     import { onMount } from "svelte";
     import { fly } from 'svelte/transition';
 
-    let mediaPath = $page.url.origin + "/media/";
+    let mediaPath = page.url.origin + "/media/";
     onMount(() => {
         document.title = "About - Cattn.dev";
     })

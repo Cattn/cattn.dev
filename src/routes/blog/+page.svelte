@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
@@ -21,9 +23,9 @@
 
 	let allTags = ['All', ...new Set(articlesData.flatMap(article => article.tags || []))];
 	let selectedTag = writable('All');
-	let filteredArticles: Article[] = []; 
+	let filteredArticles: Article[] = $state([]); 
 
-	$: {
+	run(() => {
 		if ($selectedTag === 'All') {
 			filteredArticles = articlesData as Article[]; 
 		} else {
@@ -32,7 +34,7 @@
 			);
 		}
 		tick();
-	}
+	});
 
 	onMount(() => {
 		document.title = "Blog - Cattn.dev";

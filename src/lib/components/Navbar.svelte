@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { cn } from '$lib/utils';
 
   const navLinks = [
@@ -20,7 +20,7 @@
           variant="ghost" 
           class="{cn(
             'px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-            $page.url.pathname === link.href 
+            page.url.pathname === link.href 
               ? 'bg-accent-blue text-accent-blue-foreground hover:bg-accent-blue/90'
               : 'text-muted-foreground hover:text-accent-blue hover:bg-accent-blue/10'
           )}"
