@@ -1,23 +1,27 @@
 <script lang="ts">
-// @ts-nocheck 
-	import markdownit from 'markdown-it'
+	import markdownit from 'markdown-it';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { fly } from 'svelte/transition';
 	import { Badge } from '$lib/components/ui/badge'; 
 	import { Button } from '$lib/components/ui/button'; 
 	import articles from '../../articles.json';
+	import type { Component } from 'svelte';
 
 	interface Props {
 		data: any;
 	}
+
+	type ContentPart = 
+		| { key: string; type: 'html'; html: string }
+		| { key: string; type: 'component'; component: Component; props: Record<string, any> };
 
 	let { data }: Props = $props();
 
 	const article = articles.find((article) => article.link === $page.url.pathname);
 
 	let htmlContent = $state("<p>Loading Article...</p>");
-	let contentParts = $state([{ key: 'h0', type: 'html', html: htmlContent }]);
+	let contentParts: ContentPart[] = $state([{ key: 'h0', type: 'html', html: "<p>Loading Article...</p>" }]);
 
 	const libComponents = import.meta.glob('/src/lib/*.svelte');
 	const componentCache = new Map();
@@ -80,13 +84,13 @@
 		return { md: processedLines.join('\n'), requests };
 	}
 
-	async function loadLibComponent(name: string) {
+	async function loadLibComponent(name: string): Promise<Component | null> {
 		if (componentCache.has(name)) return componentCache.get(name);
 		const path = `/src/lib/${name}.svelte`;
 		const loader = libComponents[path];
 		if (!loader) return null;
 		try {
-			const mod = await loader();
+			const mod = await loader() as { default?: Component };
 			const cmp = mod?.default ?? null;
 			componentCache.set(name, cmp);
 			return cmp;
@@ -95,8 +99,8 @@
 		}
 	}
 
-	async function toParts(renderedHtml: string, requests: Array<{ name: string; props: Record<string, any> }>) {
-		const parts: Array<any> = [];
+	async function toParts(renderedHtml: string, requests: Array<{ name: string; props: Record<string, any> }>): Promise<ContentPart[]> {
+		const parts: ContentPart[] = [];
 		let partIdx = 0;
 		let lastIndex = 0;
 		let match;
@@ -182,7 +186,8 @@
 				{#if part.type === 'html'}
 					{@html part.html}
 				{:else if part.type === 'component'}
-					<svelte:component this={part.component} {...part.props} />
+					{@const Comp = part.component}
+					<Comp {...part.props} />
 				{/if}
 			{/each}
 		</div>

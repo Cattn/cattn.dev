@@ -1,11 +1,8 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import { onMount, tick } from 'svelte';
-	import { writable } from 'svelte/store';
+	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import articlesJsonData from './articles.json';
 	import { cn } from '$lib/utils';
@@ -21,27 +18,31 @@
 
 	const articlesData: Article[] = articlesJsonData.filter((article: Article) => article.tags && article.tags.length > 0).sort((a, b) => b.id - a.id);
 
-	let allTags = ['All', ...new Set(articlesData.flatMap(article => article.tags || []))];
-	let selectedTag = writable('All');
-	let filteredArticles: Article[] = $state([]); 
-
-	run(() => {
-		if ($selectedTag === 'All') {
-			filteredArticles = articlesData as Article[]; 
-		} else {
-			filteredArticles = articlesData.filter((article: Article) => 
-				article.tags && article.tags.includes($selectedTag)
-			);
-		}
-		tick();
-	});
+	let allTags = [...new Set(articlesData.flatMap(article => article.tags || []))];
+	let selectedTags: string[] = $state([]);
+	
+	let filteredArticles = $derived(
+		selectedTags.length === 0
+			? articlesData
+			: articlesData.filter((article: Article) => 
+				article.tags && article.tags.some(tag => selectedTags.includes(tag))
+			)
+	);
 
 	onMount(() => {
 		document.title = "Blog - Cattn.dev";
 	});
 
-	function selectTag(tag: string) {
-		selectedTag.set(tag);
+	function toggleTag(tag: string) {
+		if (selectedTags.includes(tag)) {
+			selectedTags = selectedTags.filter(t => t !== tag);
+		} else {
+			selectedTags = [...selectedTags, tag];
+		}
+	}
+
+	function clearTags() {
+		selectedTags = [];
 	}
 
 </script>
@@ -53,13 +54,25 @@
 
 <section class="container mx-auto px-4 py-4 text-center" in:fly="{{ y: 50, duration: 500, delay: 300 }}">
 	<div class="flex flex-wrap justify-center gap-2">
+		<Button 
+			variant={selectedTags.length === 0 ? 'secondary' : 'outline'}
+			onclick={clearTags}
+			class={cn(
+				'transition-all',
+				selectedTags.length === 0
+					? 'bg-accent-blue text-accent-blue-foreground hover:bg-accent-blue/90'
+					: 'hover:bg-accent-blue/10 hover:text-accent-blue'
+			)}
+		>
+			All
+		</Button>
 		{#each allTags as tag (tag)}
 			<Button 
-				variant={$selectedTag === tag ? 'secondary' : 'outline'}
-				on:click={() => selectTag(tag)}
+				variant={selectedTags.includes(tag) ? 'secondary' : 'outline'}
+				onclick={() => toggleTag(tag)}
 				class={cn(
 					'transition-all',
-					$selectedTag === tag
+					selectedTags.includes(tag)
 						? 'bg-accent-blue text-accent-blue-foreground hover:bg-accent-blue/90'
 						: 'hover:bg-accent-blue/10 hover:text-accent-blue'
 				)}
@@ -96,7 +109,7 @@
 		</div>
 	{:else}
 		<div class="text-center py-10 text-muted-foreground" in:fly="{{ y: 20, duration: 300 }}">
-			No articles found for the selected tag: {$selectedTag}
+			No articles found for the selected tags: {selectedTags.join(', ')}
 		</div>
 	{/if}
 </section>
