@@ -44,7 +44,6 @@
 		"@ktibow/material-color-utilities-nightly": "^0.3.11755307340811",
 		"m3-svelte": "^4.6.2",
 		"@fortawesome/fontawesome-free": "^6.6.0",
-		"bits-ui": "^2.15.4",
 		"clsx": "^2.1.1",
 		"markdown-it": "^14.1.0",
 		"svelte-inview": "^4.0.4",
