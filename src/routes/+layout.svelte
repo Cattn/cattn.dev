@@ -1,6 +1,7 @@
 <script>
 	import Navbar from '$lib/components/Navbar.svelte';
 	import '../app.css';
+	import '../main.css';
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 	import { HDRRouter } from '@cattn/hdr';

@@ -2,9 +2,7 @@
 	import markdownit from 'markdown-it';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-	import { fly } from 'svelte/transition';
-	import { Badge } from '$lib/components/ui/badge'; 
-	import { Button } from '$lib/components/ui/button'; 
+	import { fly } from 'svelte/transition'; 
 	import articles from '../../articles.json';
 	import type { Component } from 'svelte';
 

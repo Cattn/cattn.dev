@@ -1,11 +1,7 @@
 <script lang="ts">
-	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import * as Card from '$lib/components/ui/card/index.js';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import articlesJsonData from './articles.json';
-	import { cn } from '$lib/utils';
 
 	interface Article {
 		title: string;
