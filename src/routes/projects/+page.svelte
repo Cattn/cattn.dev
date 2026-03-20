@@ -11,6 +11,7 @@
         { title: 'hdr-ify', description: 'A Svelte library for rendering element colors in HDR!', link: 'https://github.com/cattn/hdr-ify', badges: ['Complete', 'NPM Package'] },
         { title: 'Clovis Flights', description: 'An app to help you find cheap flights easier!', link: 'https://github.com/Cattn/clovis', badges: ['In Progress'] },
         { title: 'adapter-extension', description: 'Svelte adapter that makes chrome extension support easier', link: 'https://github.com/Cattn/adapter-extension', badges: ['Complete', 'NPM Package'] },
+        { title: 'meta-vision-glasses', description: 'Let your glasses see for you! A tool to link your Meta glasses to various AI tools', link: 'https://github.com/Cattn/meta-vision-glasses', badges: ['Complete'] },
         { title: 'senseshift-face-pcb', description: 'A custom pcb that fits the X6 Facial Haptic Interface', link: 'https://github.com/Cattn/senseshift-face-pcb', badges: ['Complete'] },
         { title: 'do-it!', description: 'A game-ified notes & to-do app that makes getting sh*t done, fun!', link: 'https://github.com/Cattn/do-it.', badges: ['In Progress'] },
         { title: 'tone-match', description: 'find your match quick in this elimination-style game of sound & color!', link: 'https://github.com/Cattn/tone-match', badges: ['Complete'] },
