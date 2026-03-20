@@ -9,6 +9,7 @@
         { title: 'Maple', description: 'A local-library first music platform. A new way to organize and enjoy your music. Optional account and social features!', link: 'https://github.com/Cattn/Maple', badges: ['Active', 'In Progress', 'Web', 'iOS'] },
         { title: 'SMS', description: 'Upload, share, and manage your files quickly. Supports file expiration, quick filters, and previews!', link: 'https://github.com/Cattn/SMS', badges: ['Complete'] },
         { title: 'hdr-ify', description: 'A Svelte library for rendering element colors in HDR!', link: 'https://github.com/cattn/hdr-ify', badges: ['Complete', 'NPM Package'] },
+        { title: 'Clovis Flights', description: 'An app to help you find cheap flights easier!', link: 'https://github.com/Cattn/clovis', badges: ['In Progress'] },
         { title: 'adapter-extension', description: 'Svelte adapter that makes chrome extension support easier', link: 'https://github.com/Cattn/adapter-extension', badges: ['Complete', 'NPM Package'] },
         { title: 'senseshift-face-pcb', description: 'A custom pcb that fits the X6 Facial Haptic Interface', link: 'https://github.com/Cattn/senseshift-face-pcb', badges: ['Complete'] },
         { title: 'do-it!', description: 'A game-ified notes & to-do app that makes getting sh*t done, fun!', link: 'https://github.com/Cattn/do-it.', badges: ['In Progress'] },
