@@ -30,5 +30,13 @@
         "date": "1/13/2026",
         "id": 4,
         "tags": ["project", "HDR", "webdev", "typescript", "svelte", "my eyes!!"]
+    },
+    {
+        "title": "The story of Maple (pt. 2)",
+        "description": "So yeah, I redesigned it... But was it worth it?",
+        "link": "/blog/article/maple2",
+        "date": "05/20/2026",
+        "id": 5,
+        "tags": ["project", "design", "music", "typescript", "svelte", "webdev"]
     }
 ]

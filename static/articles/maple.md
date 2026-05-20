@@ -42,5 +42,4 @@ Currently? you don't! However, the future update for Maple including PeerJS supp
 <img src="https://play.maple.music/SMS/uploads/mapleshow.png">
 <sub> Current Maple UI </sub>
 
-
-#### more in part 2: (SOON)
+**Interested in more Maple? Read [PART 2](https://cattn.dev/blog/article/maple2)**
