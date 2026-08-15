@@ -71,7 +71,7 @@
 			{#each filteredArticles as article (article.id)}
 				<div in:fly={{ y: 20, duration: 300, delay: 100 }}>
 					<a href={article.link} class="group block h-full">
-						<SurfaceCard class="h-full transition-all group-hover:shadow-lg">
+						<SurfaceCard variant="low" class="h-full transition-all group-hover:shadow-lg">
 							<div class="flex h-full flex-col">
 								<h3 class="text-lg font-semibold text-on-surface transition-colors group-hover:text-primary">
 									{article.title}
