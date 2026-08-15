@@ -159,17 +159,17 @@
 </script>
 
 {#if article}
-	<section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
-		<h1 class="text-4xl font-extrabold tracking-tight text-on-surface lg:text-5xl">{article.title}</h1>
-		<p class="mt-2 text-xl text-on-surface-variant">{article.description}</p>
-		<div class="mt-4 flex items-center justify-center space-x-4">
-			<div class="flex items-center justify-center gap-4">
+	<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-2 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+		<h1 class="text-4xl font-extrabold tracking-tight text-on-surface max-sm:text-3xl lg:text-5xl">{article.title}</h1>
+		<p class="mt-2 text-xl text-on-surface-variant max-sm:text-base">{article.description}</p>
+		<div class="mt-4 flex items-center justify-center space-x-4 max-sm:flex-col max-sm:space-x-0 max-sm:gap-3">
+			<div class="flex items-center justify-center gap-4 max-sm:w-full max-sm:flex-col max-sm:gap-2">
 				<Button href="/blog" variant="outlined">
 					&larr; Back to Blog
 				</Button>
 				<span class="text-sm text-on-surface-variant">{article.date}</span>
 				{#if article.tags && article.tags.length}
-					<div class="flex flex-wrap gap-2">
+					<div class="flex flex-wrap justify-center gap-2">
 						{#each article.tags as tag (tag)}
 							<Badge>{tag}</Badge>
 						{/each}
@@ -179,7 +179,7 @@
 		</div>
 	</section>
 
-	<section class="container mx-auto mb-10 max-w-3xl px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
+	<section class="container mx-auto max-sm:!max-w-none mb-10 max-w-3xl px-4 max-sm:px-2 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
 		<div class="prose max-w-none">
 			{#each contentParts as part (part.key)}
 				{#if part.type === 'html'}
@@ -193,11 +193,11 @@
 	</section>
 
 {:else if htmlContent.includes('Loading')}
-	<div class="container mx-auto px-4 py-16 text-center">
+	<div class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-2 py-16 text-center">
 		<p>{@html htmlContent}</p>
 	</div>
 {:else}
-	<div class="container mx-auto px-4 py-16 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+	<div class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-2 py-16 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
 		<h1 class="text-4xl font-extrabold tracking-tight text-error lg:text-5xl">Article Not Found</h1>
 		<p class="mt-2 text-xl text-on-surface-variant">The requested article could not be loaded.</p>
 		{@html htmlContent}

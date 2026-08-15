@@ -16,7 +16,7 @@
 	} & HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-<div class={['surface-card', variant, compact && 'compact', className]} {...rest}>
+<div class={['surface-card', variant, compact && 'compact', 'max-sm:!p-2', className]} {...rest}>
 	{@render children()}
 </div>
 

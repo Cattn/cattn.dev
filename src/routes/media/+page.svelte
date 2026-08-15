@@ -45,12 +45,12 @@
 	];
 </script>
 
-<section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
 	<h1 class="text-5xl font-black text-primary">Media</h1>
 	<h2 class="mt-1 text-xl font-semibold text-on-surface-variant">Assorted Photos</h2>
 </section>
 
-<section class="container mx-auto mb-10 px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
+<section class="container mx-auto max-sm:!max-w-none mb-10 px-4 max-sm:px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
 	<div class="mb-6 text-center sm:text-left">
 		<h2 class="text-3xl font-black text-primary">VRChat</h2>
 		<p class="text-lg font-semibold text-on-surface-variant">Some Cool Photos</p>
@@ -59,7 +59,7 @@
 	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each VRCmedia as item (item.image)}
 			<SurfaceCard class="overflow-hidden transition-all hover:shadow-lg">
-				<div class="-m-4 mb-0 flex aspect-video items-center justify-center bg-surface-container-high">
+				<div class="-m-4 mb-0 flex aspect-video items-center justify-center bg-surface-container-high max-sm:-m-2">
 					<a href={item.image} target="_blank" rel="noopener noreferrer" class="block h-full w-full">
 						<img
 							alt={item.alt}
@@ -84,7 +84,7 @@
 	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each otherMedia as item (item.image)}
 			<SurfaceCard class="overflow-hidden transition-all hover:shadow-lg">
-				<div class="-m-4 mb-0 flex aspect-video items-center justify-center bg-surface-container-high">
+				<div class="-m-4 mb-0 flex aspect-video items-center justify-center bg-surface-container-high max-sm:-m-2">
 					<a href={item.image} target="_blank" rel="noopener noreferrer" class="block h-full w-full">
 						<img
 							alt={item.alt}

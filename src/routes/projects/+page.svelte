@@ -178,12 +178,12 @@
 	});
 </script>
 
-<section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
 	<h1 class="text-5xl font-black text-primary">Projects</h1>
 	<h2 class="mt-1 text-xl font-semibold text-on-surface-variant">and completed work</h2>
 </section>
 
-<section class="container mx-auto px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
 	<h2 class="mb-6 text-center text-3xl font-black text-primary sm:text-left">Featured Work</h2>
 	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each featuredProjects as project (project.title)}
@@ -191,7 +191,7 @@
 				<img
 					src="/images/{project.title}.png"
 					alt={project.title}
-					class="-mx-4 -mt-4 mb-0 h-40 w-[calc(100%+2rem)] object-contain p-4"
+					class="-mx-4 -mt-4 mb-0 h-40 w-[calc(100%+2rem)] object-contain p-4 max-sm:-mx-2 max-sm:-mt-2 max-sm:w-[calc(100%+1rem)] max-sm:p-2"
 				/>
 				<div class="flex flex-grow flex-col">
 					<div class="mb-3">
@@ -211,7 +211,7 @@
 	</div>
 </section>
 
-<section class="container mx-auto px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 500 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 500 }}>
 	<div class="mb-6 text-center sm:text-left">
 		<h2 class="text-3xl font-black text-primary">Finished Projects</h2>
 		<p class="text-lg font-semibold text-on-surface-variant">Stable and finished projects.</p>
@@ -237,7 +237,7 @@
 	</div>
 </section>
 
-<section class="container mx-auto mb-10 px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 600 }}>
+<section class="container mx-auto max-sm:!max-w-none mb-10 px-4 max-sm:px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 600 }}>
 	<div class="mb-6 text-center sm:text-left">
 		<h2 class="text-3xl font-black text-primary">Things I've helped with</h2>
 		<p class="text-lg font-semibold text-on-surface-variant">

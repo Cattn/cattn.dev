@@ -47,12 +47,12 @@
 	}
 </script>
 
-<section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
 	<h1 class="text-5xl font-black text-primary">Blog</h1>
 	<h2 class="mt-1 text-xl font-semibold text-on-surface-variant">My thoughts &amp; Updates</h2>
 </section>
 
-<section class="container mx-auto px-4 py-4 text-center" in:fly={{ y: 50, duration: 500, delay: 300 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 py-4 text-center" in:fly={{ y: 50, duration: 500, delay: 300 }}>
 	<div class="flex flex-wrap items-center justify-center gap-2">
 		<Button variant={selectedTags.length === 0 ? 'filled' : 'outlined'} click={clearTags}>
 			All
@@ -65,7 +65,7 @@
 	</div>
 </section>
 
-<section class="container mx-auto mb-10 px-4 py-6">
+<section class="container mx-auto max-sm:!max-w-none mb-10 px-4 max-sm:px-4 py-6">
 	{#if filteredArticles.length > 0}
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{#each filteredArticles as article (article.id)}

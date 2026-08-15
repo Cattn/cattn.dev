@@ -119,7 +119,7 @@
 	});
 </script>
 
-<section class="container mx-auto px-4 py-16 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 py-16 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
 	<h1 class="text-5xl font-black text-primary">Cattn</h1>
 	<h2 class="mt-1 text-xl font-semibold text-on-surface-variant">aka Logan</h2>
 	<div class="mt-8 flex flex-col items-center justify-center gap-8 lg:flex-row">
@@ -132,7 +132,7 @@
 	</div>
 </section>
 
-<section class="container mx-auto px-4 py-10" in:fly={{ y: 50, duration: 500, delay: 400 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 py-10" in:fly={{ y: 50, duration: 500, delay: 400 }}>
 	<h2 class="mb-6 text-center text-3xl font-black text-primary lg:text-left">Featured Projects</h2>
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 		{#each projects as project (project.title)}
@@ -146,21 +146,21 @@
 	</div>
 </section>
 
-<section class="container mx-auto px-4 py-10" in:fly={{ y: 50, duration: 500, delay: 500 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 py-10" in:fly={{ y: 50, duration: 500, delay: 500 }}>
 	<h2 class="mb-6 text-center text-3xl font-black text-on-surface lg:text-left">Things I know</h2>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 		{#each skillGroups as group (group.title)}
 			<SurfaceCard class="transition-all hover:shadow-lg">
 				<h3 class="mb-4 text-xl font-bold text-on-surface">{group.title}</h3>
-				<div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+				<div class="grid grid-cols-2 gap-3 max-sm:gap-2 sm:grid-cols-3">
 					{#each group.items as item (item.name)}
 						<div
-							class="flex items-center gap-2 rounded-xl border border-outline-variant bg-surface-container-high px-3 py-2"
+							class="flex min-w-0 items-center gap-2 rounded-xl border border-outline-variant bg-surface-container-high px-3 py-2 max-sm:gap-1.5 max-sm:px-2"
 						>
 							{#if item.icon}
-								<i class={`${item.icon} text-on-surface-variant`}></i>
+								<i class={`${item.icon} shrink-0 text-on-surface-variant`}></i>
 							{/if}
-							<span class="text-sm font-semibold text-on-surface">{item.name}</span>
+							<span class="min-w-0 truncate text-sm font-semibold text-on-surface">{item.name}</span>
 						</div>
 					{/each}
 				</div>
@@ -169,13 +169,13 @@
 	</div>
 </section>
 
-<section class="container mx-auto px-4 py-10" in:fly={{ y: 50, duration: 500, delay: 700 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 py-10" in:fly={{ y: 50, duration: 500, delay: 700 }}>
 	<h2 class="mb-6 text-center text-3xl font-black text-on-surface lg:text-left">Favorite Albums</h2>
-	<div class="rounded-2xl border border-outline-variant p-6">
-		<div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+	<div class="rounded-2xl border border-outline-variant p-6 max-sm:p-2">
+		<div class="grid grid-cols-2 gap-6 max-sm:gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
 			{#each albums as album (album.title)}
 				<SurfaceCard class="overflow-hidden transition-all hover:scale-105 hover:shadow-lg">
-					<div class="-mx-4 -mt-4 aspect-square">
+					<div class="-mx-4 -mt-4 aspect-square max-sm:-mx-2 max-sm:-mt-2">
 						<img
 							src="/images/albums/{album.image}"
 							alt={album.title}
@@ -191,16 +191,16 @@
 	</div>
 </section>
 
-<section class="container mx-auto mb-10 px-4 py-10" in:fly={{ y: 50, duration: 500, delay: 800 }}>
+<section class="container mx-auto max-sm:!max-w-none mb-10 px-4 max-sm:px-4 py-10" in:fly={{ y: 50, duration: 500, delay: 800 }}>
 	<h2 class="mb-6 text-center text-3xl font-black text-on-surface lg:text-left">Favorite Artists</h2>
-	<div class="rounded-2xl border border-outline-variant p-6">
-		<div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+	<div class="rounded-2xl border border-outline-variant p-6 max-sm:p-2">
+		<div class="grid grid-cols-2 gap-6 max-sm:gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
 			{#each artists as artist (artist.title)}
 				<div class="group flex flex-col items-center transition-all hover:scale-105">
 					<img
 						src="/images/artists/{artist.image}"
 						alt={artist.title}
-						class="h-32 w-32 rounded-full border-2 border-transparent object-cover shadow-lg group-hover:border-primary md:h-40 md:w-40"
+						class="h-32 w-32 rounded-full border-2 border-transparent object-cover shadow-lg group-hover:border-primary max-sm:h-auto max-sm:w-full max-sm:aspect-square md:h-40 md:w-40"
 					/>
 					<h3 class="mt-3 w-full truncate text-center text-sm font-semibold text-on-surface">
 						{artist.title}

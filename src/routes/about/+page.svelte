@@ -31,27 +31,27 @@
 	];
 </script>
 
-<section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
 	<h1 class="text-5xl font-black text-primary">Extras</h1>
 	<h2 class="mt-1 text-xl font-semibold text-on-surface-variant">Socials & More</h2>
 </section>
 
-<section class="container mx-auto mb-10 px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
+<section class="container mx-auto max-sm:!max-w-none mb-10 px-4 max-sm:px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
 	<div class="mb-6 text-center sm:text-left">
 		<h2 class="text-3xl font-black text-primary">Socials</h2>
 		<p class="text-lg font-semibold text-on-surface-variant">Where to find me</p>
 	</div>
 
-	<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+	<div class="grid grid-cols-2 gap-3 max-sm:grid-cols-1 max-sm:gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
 		{#each socials as social (social.name)}
-			<a href={social.link} target="_blank" rel="noopener noreferrer" class="group block">
+			<a href={social.link} target="_blank" rel="noopener noreferrer" class="group block min-w-0">
 				<SurfaceCard class="h-full transition-all group-hover:shadow-lg">
-					<div class="flex items-center justify-center gap-3">
+					<div class="flex min-w-0 items-center justify-center gap-3">
 						<i
-							class={`${social.icon} fa-lg w-5 text-center text-on-surface-variant transition-colors group-hover:text-primary`}
+							class={`${social.icon} fa-lg w-5 shrink-0 text-center text-on-surface-variant transition-colors group-hover:text-primary`}
 						></i>
 						<span
-							class="text-sm font-medium text-on-surface transition-colors group-hover:text-primary"
+							class="min-w-0 truncate text-sm font-medium text-on-surface transition-colors group-hover:text-primary"
 						>
 							{social.name}
 						</span>
