@@ -1,15 +1,15 @@
 <script>
 	import Navbar from '$lib/components/Navbar.svelte';
 	import '../app.css';
+	import '../main.css';
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 	import { HDRRouter } from '@cattn/hdr';
-  
 </script>
 
 <div class="supersm:ml-6 not-supersm:ml-0">
-<Navbar />
-{@render children?.()}
+	<Navbar />
+	{@render children?.()}
 </div>
 
 <HDRRouter />

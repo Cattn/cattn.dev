@@ -3,8 +3,8 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { fly } from 'svelte/transition';
-	import { Badge } from '$lib/components/ui/badge'; 
-	import { Button } from '$lib/components/ui/button'; 
+	import Badge from '$lib/components/Badge.svelte';
+	import { Button } from 'm3-svelte'; 
 	import articles from '../../articles.json';
 	import type { Component } from 'svelte';
 
@@ -159,29 +159,28 @@
 </script>
 
 {#if article}
-	<section class="container mx-auto px-4 pt-16 pb-8 text-center" in:fly="{{ y: 50, duration: 500, delay: 200 }}">
-		<h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">{article.title}</h1>
-		<p class="mt-2 text-xl text-muted-foreground">{article.description}</p>
-		<div class="mt-4 flex items-center justify-center space-x-4">
-            <div class="flex items-center justify-center gap-4">
-                <Button href="/blog" variant="outline" size="sm">
-                    &larr; Back to Blog
-                </Button>
-                <span class="text-sm text-muted-foreground">{article.date}</span>
-                {#if article.tags && article.tags.length}
-                    <div class="flex flex-wrap gap-2">
-                        {#each article.tags as tag (tag)}
-                            <Badge variant="secondary">{tag}</Badge>
-                        {/each}
-                    </div>
-                {/if}
-            </div>
+	<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-2 pt-16 pb-8 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+		<h1 class="text-4xl font-extrabold tracking-tight text-on-surface max-sm:text-3xl lg:text-5xl">{article.title}</h1>
+		<p class="mt-2 text-xl text-on-surface-variant max-sm:text-base">{article.description}</p>
+		<div class="mt-4 flex items-center justify-center space-x-4 max-sm:flex-col max-sm:space-x-0 max-sm:gap-3">
+			<div class="flex items-center justify-center gap-4 max-sm:w-full max-sm:flex-col max-sm:gap-2">
+				<Button href="/blog" variant="outlined">
+					&larr; Back to Blog
+				</Button>
+				<span class="text-sm text-on-surface-variant">{article.date}</span>
+				{#if article.tags && article.tags.length}
+					<div class="flex flex-wrap justify-center gap-2">
+						{#each article.tags as tag (tag)}
+							<Badge>{tag}</Badge>
+						{/each}
+					</div>
+				{/if}
+			</div>
 		</div>
 	</section>
 
-	
-	<section class="container mx-auto px-4 py-6 mb-10 max-w-3xl" in:fly="{{ y: 50, duration: 500, delay: 400 }}">
-		<div class="prose prose-invert max-w-none">
+	<section class="container mx-auto max-sm:!max-w-none mb-10 max-w-3xl px-4 max-sm:px-2 py-6" in:fly={{ y: 50, duration: 500, delay: 400 }}>
+		<div class="prose max-w-none">
 			{#each contentParts as part (part.key)}
 				{#if part.type === 'html'}
 					{@html part.html}
@@ -194,14 +193,16 @@
 	</section>
 
 {:else if htmlContent.includes('Loading')}
-	<div class="container mx-auto px-4 py-16 text-center">
-		<p>{@html htmlContent}</p> 
+	<div class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-2 py-16 text-center">
+		<p>{@html htmlContent}</p>
 	</div>
 {:else}
-	<div class="container mx-auto px-4 py-16 text-center" in:fly="{{ y: 50, duration: 500, delay: 200 }}">
-		<h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl text-destructive">Article Not Found</h1>
-		<p class="mt-2 text-xl text-muted-foreground">The requested article could not be loaded.</p>
+	<div class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-2 py-16 text-center" in:fly={{ y: 50, duration: 500, delay: 200 }}>
+		<h1 class="text-4xl font-extrabold tracking-tight text-error lg:text-5xl">Article Not Found</h1>
+		<p class="mt-2 text-xl text-on-surface-variant">The requested article could not be loaded.</p>
 		{@html htmlContent}
-		<Button href="/blog" class="mt-6">Back to Blog</Button>
+		<div class="mt-6 flex justify-center">
+			<Button href="/blog" variant="filled">Back to Blog</Button>
+		</div>
 	</div>
 {/if}

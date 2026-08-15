@@ -1,33 +1,47 @@
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { page } from '$app/state';
-  import { cn } from '$lib/utils';
+	import { Button, ConnectedButtons } from 'm3-svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
-    { href: "/about", label: "Extras" }
-  ];
+	const navItems = [
+		{ name: 'Home', value: 'home', href: '/' },
+		{ name: 'Projects', value: 'projects', href: '/projects' },
+		{ name: 'Blog', value: 'blog', href: '/blog' },
+		{ name: 'Extras', value: 'about', href: '/about' }
+	];
+
+	let currentTab = $derived.by(() => {
+		const path = page.url.pathname;
+		if (path === '/') return 'home';
+		if (path.startsWith('/projects')) return 'projects';
+		if (path.startsWith('/blog')) return 'blog';
+		if (path.startsWith('/about') || path.startsWith('/media')) return 'about';
+		return 'home';
+	});
+	let selected = $derived(currentTab);
+
+	function navigate(item: (typeof navItems)[number]) {
+		selected = item.value;
+		goto(item.href);
+	}
 </script>
 
-<nav class="sticky flex top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-  <div class="container flex h-14 max-w-screen-2xl items-center justify-center">
-    <div class="flex items-center space-x-1 sm:space-x-2">
-      {#each navLinks as link (link.href)}
-        <Button 
-          href="{link.href}" 
-          variant="ghost" 
-          class="{cn(
-            'px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-            page.url.pathname === link.href 
-              ? 'bg-accent-blue text-accent-blue-foreground hover:bg-accent-blue/90'
-              : 'text-muted-foreground hover:text-accent-blue hover:bg-accent-blue/10'
-          )}"
-        >
-          {link.label}
-        </Button>
-      {/each}
-    </div>
-  </div>
+<nav
+	class="sticky top-0 z-50 flex w-full justify-center bg-surface/95 py-2 backdrop-blur supports-[backdrop-filter]:bg-surface/60"
+>
+	<ConnectedButtons>
+		{#each navItems as item (item.value)}
+			<input
+				id="nav-{item.value}"
+				type="radio"
+				name="site-nav"
+				value={item.value}
+				checked={selected === item.value}
+				onchange={() => navigate(item)}
+			/>
+			<Button for={`nav-${item.value}`} variant="filled" square>
+				{item.name}
+			</Button>
+		{/each}
+	</ConnectedButtons>
 </nav>

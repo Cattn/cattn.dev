@@ -1,85 +1,150 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
- 
-@layer base {
-  :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
- 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
- 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
- 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
- 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
- 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
- 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
- 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
- 
-    --accent-blue: 210 90% 60%;
-    --accent-blue-foreground: 0 0% 98%;
-    
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
- 
-    --ring: 240 4.9% 83.9%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
- 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
- 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
- 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
- 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
- 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
- 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
- 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
- 
-    /* New Blue Accent Color */
-    --accent-blue: 210 90% 60%;
-    --accent-blue-foreground: 0 0% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
- 
-    --ring: 240 4.9% 83.9%;
-  }
+@import url('m3-svelte/misc/styles.css');
+@import url('m3-svelte/misc/recommended-styles.css');
+
+iconify-icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
 }
- 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+
+body {
+	margin: 0;
+	padding: 0;
+	background: rgb(var(--m3-scheme-background));
+	color: rgb(var(--m3-scheme-on-surface));
+	font-family: 'Roboto Flex', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	--cp-bg-color: rgb(var(--m3-scheme-surface));
+	--cp-border-color: rgb(var(--m3-scheme-outline-variant));
+	--cp-text-color: rgb(var(--m3-scheme-on-surface));
+	--cp-input-color: rgb(var(--m3-scheme-surface-container-high));
+	--cp-button-hover-color: rgb(var(--m3-scheme-surface-container-highest));
+}
+
+html {
+	box-sizing: border-box;
+	overscroll-behavior: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+:root {
+	color-scheme: light;
+}
+
+:root,
+::backdrop {
+	--m3-scheme-primary: 6 103 127;
+	--m3-scheme-surface-tint: 6 103 127;
+	--m3-scheme-on-primary: 255 255 255;
+	--m3-scheme-primary-container: 182 234 255;
+	--m3-scheme-on-primary-container: 0 78 96;
+	--m3-scheme-secondary: 76 98 106;
+	--m3-scheme-on-secondary: 255 255 255;
+	--m3-scheme-secondary-container: 207 230 241;
+	--m3-scheme-on-secondary-container: 52 74 82;
+	--m3-scheme-tertiary: 90 92 126;
+	--m3-scheme-on-tertiary: 255 255 255;
+	--m3-scheme-tertiary-container: 224 224 255;
+	--m3-scheme-on-tertiary-container: 66 68 101;
+	--m3-scheme-error: 186 26 26;
+	--m3-scheme-on-error: 255 255 255;
+	--m3-scheme-error-container: 255 218 214;
+	--m3-scheme-on-error-container: 147 0 10;
+	--m3-scheme-background: 245 250 253;
+	--m3-scheme-on-background: 23 28 31;
+	--m3-scheme-surface: 245 250 253;
+	--m3-scheme-on-surface: 23 28 31;
+	--m3-scheme-surface-variant: 219 228 232;
+	--m3-scheme-on-surface-variant: 64 72 76;
+	--m3-scheme-outline: 112 120 124;
+	--m3-scheme-outline-variant: 191 200 204;
+	--m3-scheme-shadow: 0 0 0;
+	--m3-scheme-scrim: 0 0 0;
+	--m3-scheme-inverse-surface: 44 49 52;
+	--m3-scheme-inverse-on-surface: 237 241 244;
+	--m3-scheme-inverse-primary: 136 209 235;
+	--m3-scheme-primary-fixed: 182 234 255;
+	--m3-scheme-on-primary-fixed: 0 31 40;
+	--m3-scheme-primary-fixed-dim: 136 209 235;
+	--m3-scheme-on-primary-fixed-variant: 0 78 96;
+	--m3-scheme-secondary-fixed: 207 230 241; 
+	--m3-scheme-on-secondary-fixed: 7 30 38;
+	--m3-scheme-secondary-fixed-dim: 179 202 212;
+	--m3-scheme-on-secondary-fixed-variant: 52 74 82;
+	--m3-scheme-tertiary-fixed: 224 224 255;
+	--m3-scheme-on-tertiary-fixed: 23 25 55;
+	--m3-scheme-tertiary-fixed-dim: 195 195 235;
+	--m3-scheme-on-tertiary-fixed-variant: 66 68 101;
+	--m3-scheme-surface-dim: 214 219 222;
+	--m3-scheme-surface-bright: 245 250 253;
+	--m3-scheme-surface-container-lowest: 255 255 255;
+	--m3-scheme-surface-container-low: 239 244 247;
+	--m3-scheme-surface-container: 234 239 241;
+	--m3-scheme-surface-container-high: 228 233 236;
+	--m3-scheme-surface-container-highest: 222 227 230;
+	--m3-font: 'Roboto Flex', sans-serif;
+}
+
+.dark {
+	color-scheme: dark;
+}
+
+.dark,
+.dark::backdrop {
+	--m3-scheme-primary: 136 209 235;
+	--m3-scheme-surface-tint: 136 209 235;
+	--m3-scheme-on-primary: 0 53 67;
+	--m3-scheme-primary-container: 0 78 96;
+	--m3-scheme-on-primary-container: 182 234 255;
+	--m3-scheme-secondary: 179 202 212;
+	--m3-scheme-on-secondary: 30 51 59;
+	--m3-scheme-secondary-container: 52 74 82;
+	--m3-scheme-on-secondary-container: 207 230 241;
+	--m3-scheme-tertiary: 195 195 235;
+	--m3-scheme-on-tertiary: 44 46 77;
+	--m3-scheme-tertiary-container: 66 68 101;
+	--m3-scheme-on-tertiary-container: 224 224 255;
+	--m3-scheme-error: 255 180 171;
+	--m3-scheme-on-error: 105 0 5;
+	--m3-scheme-error-container: 147 0 10;
+	--m3-scheme-on-error-container: 255 218 214;
+	--m3-scheme-background: 15 20 22;
+	--m3-scheme-on-background: 222 227 230;
+	--m3-scheme-surface: 15 20 22;
+	--m3-scheme-on-surface: 222 227 230;
+	--m3-scheme-surface-variant: 64 72 76;
+	--m3-scheme-on-surface-variant: 191 200 204;
+	--m3-scheme-outline: 138 146 150;
+	--m3-scheme-outline-variant: 64 72 76;
+	--m3-scheme-shadow: 0 0 0;
+	--m3-scheme-scrim: 0 0 0;
+	--m3-scheme-inverse-surface: 222 227 230;
+	--m3-scheme-inverse-on-surface: 44 49 52;
+	--m3-scheme-inverse-primary: 6 103 127;
+	--m3-scheme-primary-fixed: 182 234 255;
+	--m3-scheme-on-primary-fixed: 0 31 40;
+	--m3-scheme-primary-fixed-dim: 136 209 235;
+	--m3-scheme-on-primary-fixed-variant: 0 78 96;
+	--m3-scheme-secondary-fixed: 207 230 241;
+	--m3-scheme-on-secondary-fixed: 7 30 38;
+	--m3-scheme-secondary-fixed-dim: 179 202 212;
+	--m3-scheme-on-secondary-fixed-variant: 52 74 82;
+	--m3-scheme-tertiary-fixed: 224 224 255;
+	--m3-scheme-on-tertiary-fixed: 23 25 55;
+	--m3-scheme-tertiary-fixed-dim: 195 195 235;
+	--m3-scheme-on-tertiary-fixed-variant: 66 68 101;
+	--m3-scheme-surface-dim: 15 20 22;
+	--m3-scheme-surface-bright: 53 58 60;
+	--m3-scheme-surface-container-lowest: 10 15 17;
+	--m3-scheme-surface-container-low: 23 28 31;
+	--m3-scheme-surface-container: 27 32 35;
+	--m3-scheme-surface-container-high: 37 43 45;
+	--m3-scheme-surface-container-highest: 48 54 56;
+	--m3-font: 'Roboto Flex', sans-serif;
 }
