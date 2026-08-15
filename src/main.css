@@ -1,0 +1,69 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--breakpoint-supersm: 3.75rem;
+	--breakpoint-not-supersm: 15rem;
+
+	--color-primary: rgb(var(--m3-scheme-primary));
+	--color-on-primary: rgb(var(--m3-scheme-on-primary));
+	--color-primary-container: rgb(var(--m3-scheme-primary-container));
+	--color-on-primary-container: rgb(var(--m3-scheme-on-primary-container));
+	--color-secondary: rgb(var(--m3-scheme-secondary));
+	--color-on-secondary: rgb(var(--m3-scheme-on-secondary));
+	--color-secondary-container: rgb(var(--m3-scheme-secondary-container));
+	--color-on-secondary-container: rgb(var(--m3-scheme-on-secondary-container));
+	--color-secondary-fixed: rgb(var(--m3-scheme-secondary-fixed));
+	--color-on-secondary-fixed: rgb(var(--m3-scheme-on-secondary-fixed));
+	--color-on-secondary-fixed-variant: rgb(var(--m3-scheme-on-secondary-fixed-variant));
+	--color-tertiary: rgb(var(--m3-scheme-tertiary));
+	--color-on-tertiary: rgb(var(--m3-scheme-on-tertiary));
+	--color-tertiary-container: rgb(var(--m3-scheme-tertiary-container));
+	--color-on-tertiary-container: rgb(var(--m3-scheme-on-tertiary-container));
+	--color-error: rgb(var(--m3-scheme-error));
+	--color-on-error: rgb(var(--m3-scheme-on-error));
+	--color-error-container: rgb(var(--m3-scheme-error-container));
+	--color-on-error-container: rgb(var(--m3-scheme-on-error-container));
+	--color-background: rgb(var(--m3-scheme-background));
+	--color-on-background: rgb(var(--m3-scheme-on-background));
+	--color-surface: rgb(var(--m3-scheme-surface));
+	--color-on-surface: rgb(var(--m3-scheme-on-surface));
+	--color-surface-variant: rgb(var(--m3-scheme-surface-variant));
+	--color-on-surface-variant: rgb(var(--m3-scheme-on-surface-variant));
+	--color-outline: rgb(var(--m3-scheme-outline));
+	--color-outline-variant: rgb(var(--m3-scheme-outline-variant));
+	--color-shadow: rgb(var(--m3-scheme-shadow));
+	--color-scrim: rgb(var(--m3-scheme-scrim));
+	--color-inverse-surface: rgb(var(--m3-scheme-inverse-surface));
+	--color-inverse-on-surface: rgb(var(--m3-scheme-inverse-on-surface));
+	--color-inverse-primary: rgb(var(--m3-scheme-inverse-primary));
+	--color-surface-bright: rgb(var(--m3-scheme-surface-bright));
+	--color-surface-container: rgb(var(--m3-scheme-surface-container));
+	--color-surface-container-high: rgb(var(--m3-scheme-surface-container-high));
+	--color-surface-container-highest: rgb(var(--m3-scheme-surface-container-highest));
+	--color-surface-container-low: rgb(var(--m3-scheme-surface-container-low));
+	--color-surface-container-lowest: rgb(var(--m3-scheme-surface-container-lowest));
+	--color-surface-dim: rgb(var(--m3-scheme-surface-dim));
+	--color-surface-tint: rgb(var(--m3-scheme-surface-tint));
+}
+
+.prose {
+	--tw-prose-body: rgb(var(--m3-scheme-on-surface));
+	--tw-prose-headings: rgb(var(--m3-scheme-on-surface));
+	--tw-prose-lead: rgb(var(--m3-scheme-on-surface-variant));
+	--tw-prose-links: rgb(var(--m3-scheme-primary));
+	--tw-prose-bold: rgb(var(--m3-scheme-on-surface));
+	--tw-prose-counters: rgb(var(--m3-scheme-on-surface-variant));
+	--tw-prose-bullets: rgb(var(--m3-scheme-outline));
+	--tw-prose-hr: rgb(var(--m3-scheme-outline-variant));
+	--tw-prose-quotes: rgb(var(--m3-scheme-on-surface));
+	--tw-prose-quote-borders: rgb(var(--m3-scheme-primary));
+	--tw-prose-captions: rgb(var(--m3-scheme-on-surface-variant));
+	--tw-prose-kbd: rgb(var(--m3-scheme-on-surface));
+	--tw-prose-kbd-shadows: var(--m3-scheme-shadow);
+	--tw-prose-code: rgb(var(--m3-scheme-primary));
+	--tw-prose-pre-code: rgb(var(--m3-scheme-on-surface));
+	--tw-prose-pre-bg: rgb(var(--m3-scheme-surface-container));
+	--tw-prose-th-borders: rgb(var(--m3-scheme-outline-variant));
+	--tw-prose-td-borders: rgb(var(--m3-scheme-outline-variant));
+}

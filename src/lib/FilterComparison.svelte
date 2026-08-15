@@ -1,4 +1,7 @@
 <script lang="ts">
+	import SurfaceCard from '$lib/components/SurfaceCard.svelte';
+	import { Button, Chip } from 'm3-svelte';
+
 	type Track = {
 		id: number;
 		title: string;
@@ -227,72 +230,66 @@
 	}
 </script>
 
-<div class="my-6 rounded-lg border border-border bg-card text-card-foreground shadow-sm">
-	<div class="space-y-4 px-4 py-4">
+<div class="my-6">
+	<SurfaceCard>
+		<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
 			<div class="flex flex-wrap items-center gap-2">
 				{#each sizePresets as preset (preset.value)}
-					<button
-						type="button"
-						class={[
-							'rounded-md border px-2 py-1 text-xs font-semibold transition-colors',
-							selectedSize === preset.value
-								? 'border-primary bg-primary text-primary-foreground'
-								: 'border-border bg-background text-muted-foreground hover:text-foreground'
-						]}
-						onclick={() => {
+					<Chip
+						variant="general"
+						selected={selectedSize === preset.value}
+						click={() => {
 							selectedSize = preset.value;
 						}}
 					>
 						{preset.label} ({preset.value.toLocaleString()})
-					</button>
+					</Chip>
 				{/each}
 			</div>
 
-			<button
-				type="button"
-				class="w-full rounded-md border border-border bg-background px-3 py-1 text-xs font-semibold hover:bg-muted disabled:cursor-not-allowed disabled:opacity-60 sm:ml-auto sm:w-auto"
-				onclick={runBenchmark}
-				disabled={running}
-			>
-				{running ? 'Running...' : 'Run benchmark'}
-			</button>
+			<div class="sm:ml-auto">
+				<Button variant="filled" click={runBenchmark} disabled={running}>
+					{running ? 'Running...' : 'Run benchmark'}
+				</Button>
+			</div>
 		</div>
 
 		{#if result}
-			<div class="rounded-md border border-border bg-background p-3">
+			<div class="rounded-xl border border-outline-variant bg-surface p-3">
 				<div class="flex items-center justify-between">
 					<p class="text-sm font-semibold">{formatSpeedup(searchSpeedup)}</p>
 				</div>
 				<div class="grid gap-3 sm:grid-cols-2">
 					<div>
-						<p class="text-xs uppercase tracking-wide text-muted-foreground">Old Search</p>
+						<p class="text-xs tracking-wide text-on-surface-variant uppercase">Old Search</p>
 						<p class="mt-1 text-lg font-bold">{formatMs(result.searchOldMs)} ms</p>
-						<div class="mt-2 h-2 w-full rounded-full bg-muted">
+						<div class="mt-2 h-2 w-full rounded-full bg-surface-container-high">
 							<div
-								class="h-full rounded-full bg-amber-400 transition-all duration-300"
+								class="h-full rounded-full bg-tertiary transition-all duration-300"
 								style={`width: ${searchOldWidth}%`}
 							></div>
 						</div>
 					</div>
 					<div>
-						<p class="text-xs uppercase tracking-wide text-muted-foreground">New (properly) indexed search</p>
+						<p class="text-xs tracking-wide text-on-surface-variant uppercase">
+							New (properly) indexed search
+						</p>
 						<p class="mt-1 text-lg font-bold">{formatMs(result.searchNewMs)} ms</p>
-						<div class="mt-2 h-2 w-full rounded-full bg-muted">
+						<div class="mt-2 h-2 w-full rounded-full bg-surface-container-high">
 							<div
-								class="h-full rounded-full bg-emerald-400 transition-all duration-300"
+								class="h-full rounded-full bg-primary transition-all duration-300"
 								style={`width: ${searchNewWidth}%`}
 							></div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			
 		{:else}
-			<p class="text-sm text-muted-foreground">
+			<p class="text-sm text-on-surface-variant">
 				Choose a sample library size and run the benchmark to see the difference!
 			</p>
 		{/if}
 	</div>
+	</SurfaceCard>
 </div>
