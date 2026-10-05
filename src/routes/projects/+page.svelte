@@ -14,6 +14,13 @@
 			badges: ['Active', 'In Progress', 'Web', 'iOS']
 		},
 		{
+			title: 'WIT-Calendar',
+			description:
+				'WIT-Calendar is an extension that makes adding your classes to your calendar easy & quick!',
+			link: 'https://github.com/WITCodingClub/calendar-extension',
+			badges: ['Active', 'In Progress', 'Web', 'Extension']
+		},
+		{
 			title: 'SMS',
 			description:
 				'Upload, share, and manage your files quickly. Supports file expiration, quick filters, and previews!',
@@ -25,6 +32,13 @@
 			description: 'A Svelte library for rendering element colors in HDR!',
 			link: 'https://github.com/cattn/hdr-ify',
 			badges: ['Complete', 'NPM Package']
+		},
+		{
+			title: 'WIT-Calendar Website',
+			description:
+				'The landing page for WIT-Calendar',
+			link: 'https://github.com/WITCodingClub/calendar-website',
+			badges: ['Complete', 'Web']
 		},
 		{
 			title: 'Clovis Flights',
@@ -113,20 +127,11 @@
 				'A vencord mod that allows you to display your current playing song (on Maple) in your Discord status.',
 			link: 'https://github.com/Cattn/mapleRPC',
 			badges: ['Complete']
-		}
-	];
-
-	let otherProjects = [
+		},
 		{
 			title: 'Wii-GBA',
 			description: 'A mostly faithful recreation of the Wii UI as an emulator site.',
 			link: 'https://github.com/Math-Study/wii-gba',
-			badges: ['Completed']
-		},
-		{
-			title: 'mathstudy.dev',
-			description: 'The portfolio site for Math-Study, hosted on mathstudy.dev',
-			link: 'https://github.com/Math-Study-Dev/math-study-dev.github.io/tree/svelte',
 			badges: ['Completed']
 		},
 		{
@@ -195,32 +200,6 @@
 				/>
 				<div class="flex flex-grow flex-col">
 					<div class="mb-3">
-						<Button variant="text" href={project.link} target="_blank" rel="noopener noreferrer">
-							<span class="text-xl font-bold">{project.title}</span>
-						</Button>
-					</div>
-					<div class="mb-3 flex flex-wrap gap-1">
-						{#each project.badges || [] as badge (badge)}
-							<Badge>{badge}</Badge>
-						{/each}
-					</div>
-					<p class="flex-grow text-sm text-on-surface-variant">{project.description}</p>
-				</div>
-			</SurfaceCard>
-		{/each}
-	</div>
-</section>
-
-<section class="container mx-auto max-sm:!max-w-none px-4 max-sm:px-4 py-6" in:fly={{ y: 50, duration: 500, delay: 500 }}>
-	<div class="mb-6 text-center sm:text-left">
-		<h2 class="text-3xl font-black text-primary">Finished Projects</h2>
-		<p class="text-lg font-semibold text-on-surface-variant">Stable and finished projects.</p>
-	</div>
-	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-		{#each otherProjects as project (project.title)}
-			<SurfaceCard variant="low" compact class="h-full transition-all hover:shadow-lg">
-				<div class="flex flex-grow flex-col">
-					<div class="mb-2">
 						<Button variant="text" href={project.link} target="_blank" rel="noopener noreferrer">
 							<span class="text-xl font-bold">{project.title}</span>
 						</Button>
