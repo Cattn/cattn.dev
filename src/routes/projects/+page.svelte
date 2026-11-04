@@ -21,6 +21,13 @@
 			badges: ['Active', 'In Progress', 'Web', 'Extension']
 		},
 		{
+			title: 'FL Vote Forecaster',
+			description:
+				'Tracks Florida 2026 voting by party registration, turnout, and more. It then displays all of that information through various charts and datapoints. Additionally, it uses a custom model to predict the outcomes as data comes in.',
+			link: 'https://github.com/cattn/fl-voting-estimations',
+			badges: ['Complete', 'Web']
+		},
+		{
 			title: 'SMS',
 			description:
 				'Upload, share, and manage your files quickly. Supports file expiration, quick filters, and previews!',
