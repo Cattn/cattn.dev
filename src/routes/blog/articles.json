@@ -1,42 +1,47 @@
 [
-    {
-        "title": "The story of Maple (pt. 1)",
-        "description": "A bit of a ramble about why local music libraries are so convienient, and why I made my own frontend for them.",
-        "link": "/blog/article/maple",
-        "date": "07/28/2025",
-        "id": 1,
-        "tags": ["project", "music", "svelte", "webdev", "typescript"]
-    },
-    {
-        "title": "Building 3 projects in 3 days: Shipwrecked",
-        "description": "And also some other thoughts & reflections on my experience at shipwrecked.",
-        "link": "/blog/article/shipwrecked",
-        "date": "08/14/2025",
-        "id": 2,
-        "tags": ["typescript", "shipwrecked", "hackclub", "hackathon", "game", "webdev"]
-    },
-    {
-        "title": "Obsessively iterating...",
-        "description": "Why finishing a project is so hard, and how I've personally overcome the feeling of imperfection.",
-        "link": "/blog/article/obsessively-iterating",
-        "date": "08/16/2025",
-        "id": 3,
-        "tags": ["project", "thoughts", "advice", "design"]
-    },
-    {
-        "title": "HDR for all!",
-        "description": "Building a standardized way to render HDR content on the web.",
-        "link": "/blog/article/hdr-for-all",
-        "date": "1/13/2026",
-        "id": 4,
-        "tags": ["project", "HDR", "webdev", "typescript", "svelte", "my eyes!!"]
-    },
-    {
-        "title": "The story of Maple (pt. 2)",
-        "description": "So yeah, I redesigned it... But was it worth it?",
-        "link": "/blog/article/maple2",
-        "date": "05/20/2026",
-        "id": 5,
-        "tags": ["project", "design", "music", "typescript", "svelte", "webdev"]
-    }
+	{
+		"title": "The story of Maple (pt. 1)",
+		"description": "A bit of a ramble about why local music libraries are so convienient, and why I made my own frontend for them.",
+		"link": "/blog/article/maple",
+		"date": "07/28/2025",
+		"id": 1,
+		"category": "Projects",
+		"tags": ["project", "music", "svelte", "webdev", "typescript"]
+	},
+	{
+		"title": "Building 3 projects in 3 days: Shipwrecked",
+		"description": "And also some other thoughts & reflections on my experience at shipwrecked.",
+		"link": "/blog/article/shipwrecked",
+		"date": "08/14/2025",
+		"id": 2,
+		"category": "Events",
+		"tags": ["typescript", "shipwrecked", "hackclub", "hackathon", "game", "webdev"]
+	},
+	{
+		"title": "Obsessively iterating...",
+		"description": "Why finishing a project is so hard, and how I've personally overcome the feeling of imperfection.",
+		"link": "/blog/article/obsessively-iterating",
+		"date": "08/16/2025",
+		"id": 3,
+		"category": "Thoughts",
+		"tags": ["project", "thoughts", "advice", "design"]
+	},
+	{
+		"title": "HDR for all!",
+		"description": "Building a standardized way to render HDR content on the web.",
+		"link": "/blog/article/hdr-for-all",
+		"date": "1/13/2026",
+		"id": 4,
+		"category": "Projects",
+		"tags": ["project", "HDR", "webdev", "typescript", "svelte", "my eyes!!"]
+	},
+	{
+		"title": "The story of Maple (pt. 2)",
+		"description": "So yeah, I redesigned it... But was it worth it?",
+		"link": "/blog/article/maple2",
+		"date": "05/20/2026",
+		"id": 5,
+		"category": "Projects",
+		"tags": ["project", "design", "music", "typescript", "svelte", "webdev"]
+	}
 ]
