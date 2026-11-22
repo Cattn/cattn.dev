@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-@theme {
+@theme inline {
 	--breakpoint-supersm: 3.75rem;
 	--breakpoint-not-supersm: 15rem;
 
