@@ -43,6 +43,7 @@
 	"dependencies": {
 		"@cattn/hdr": "^0.3.0",
 		"@fortawesome/fontawesome-free": "^6.6.0",
+		"@ktibow/material-color-utilities-nightly": "0.3.11763580498000",
 		"clsx": "^2.1.1",
 		"markdown-it": "^14.1.0",
 		"tailwind-merge": "^2.4.0"
